@@ -2,7 +2,7 @@
 
 **SUMMARY**
 
-SootheR is a news reader for relevant COVID-19 articles with an intuitive user interface to promote soothing and comforting random quotes to offset negative emotions brought on by pandemic updates.
+SootheR is a news reader for relevant articles with an intuitive user interface to promote soothing and comforting random quotes to offset negative emotions brought on by pandemic updates.
 
 ### Major Features
 - Items
