@@ -65,8 +65,18 @@ height: 80px;
 background: url(.png), #FFFFFF;
 }
 
-header p {
-    color: var(--secondary);
+p {
+    position: absolute;
+font-family: Roboto;
+font-style: italic;
+font-weight: 300;
+font-size: 40px;
+line-height: 47px;
+display: flex;
+align-items: center;
+text-align: center;
+padding: 20px 60px;
+color: #F2F2F2;
 }
 
 .quote-wrapper {
