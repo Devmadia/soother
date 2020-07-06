@@ -3,24 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>sootheR</title>
-<body>
-    <header>
-        <div class="page-title">
-        <h3>sootheR</h3><!--<img class="img-reader" src="./assets/newspaper.png"></img> -->
-        <h2>hello lovely</h2>
-        </div>
-    </header>
-    <!-- <button class="hollow button secondary" href="#">Secondary</button> -->
-</body>    
-<div class="quote-wrapper">
-    <p>"Emerged into consciousness ... a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions."</p>
-</div>
 </head>
+
 <body>
-    
-    <script src="./assets/js/main.js"></script>
+    <!-- Navigation header -->
+        <header class="hero">
+            <div class="page-title">
+                <h3>sootheR</h3><!--<img class="img-reader" src="./assets/newspaper.png"></img> -->
+                <h2>hello, lovely</h2>
+            </div>
+            <!-- Navigation header ends-->
+            
+            <!-- Random Quote -->
+            <!-- <button class="hollow button secondary" href="#">Secondary</button> -->
+            <div class="quote-wrapper">
+                <p>
+                    "Emerged into consciousness ... a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions."
+                    <br />
+                    -- Quoted Person
+                </p>
+            </div>
+            <!-- Random Quote ends -->
+        </header>
+   
+        <main>
+            <!-- UL lists temporarily staged for left side bar as static displays -->
+            <div class="grid-x grid-padding-x"> <!-- Auto sizing Foundation elements set to sidebar width of 4 -->
+                <div class="cell small-4 flex-container flex-dir-column">
+                    <!-- articles searched appear here by title-->
+                    <div id="saved-container" class="callout primary flex-child-auto">
+                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Auto</ul>
+                    </div>
+
+                    <div id="saved-container" class="callout primary flex-child-auto">
+                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Auto</ul>
+                    </div>
+
+                    <div id="saved-container" class="callout primary flex-child-shrink">
+                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Shrink</ul>
+                    </div>
+                </div>
+            
+                <!-- Element for Search Field -->
+                <div class="auto"> <!-- Auto sizing Foundation element set to "auto" for "whatever's left" after sidebar is constructed -->
+                    <div class="grid-container">
+                        <div id="search-field" class="grid-x grid-margin-x">
+                            <div class="medium-6 cell">
+                                <form id="user-form" class="">
+                                    <label class="form-label" for="news-search"></label>
+                                    <input name="sfield" id="sfield" type="text" autofocus="true" class="form-input" />
+                                    <button type="submit" class="btn">Search Btn</button>
+                                </form>
+                            </div>
+
+                            <!-- Element for Search Results Container -->
+                            <div id="search-results">
+                                <!-- Element for Styled Results -->
+                                <div class="">
+                                    Search Results
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+        <script src="./assets/js/config.js"></script>    
+        <script src="./assets/js/main.js"></script>
+    </main>
 </body>
 </html>
