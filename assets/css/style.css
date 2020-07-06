@@ -1,6 +1,12 @@
 /* styling for application page */
 /* global styles */
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 :root {
   --primary: #F26457;
   --secondary: #497980;
@@ -13,46 +19,110 @@ body {
     position: relative;
     width: 1440px;
     height: 1024px;
-    
     background: #FFFFFF;
 }
 
-h3 {
-    position: absolute;
-    
-    left: 122px;
+header h1 {
+    display: inline;
+    font-size: 48px;
+    margin: 30px;
+    color: #1e684f;
+}
 
-    
+header h1 .R {
+    color: #58a8d6;
+}
+
+header div {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-size: 20px;
+}
+
+header div ul {
+    list-style-type: none;
+}
+
+header div ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1e684f;
+    float: right;
+    margin: 20px 0;
+}
+
+header nav ul li {
+    display: inline;
+    font-size: xx-large;
+}
+
+header nav ul li a {
+    margin: 0 30px;
+    font-weight: lighter;
+    font-size: xx-large;
+}
+
+
+/*h3 {
+    position: absolute;
+    left: 122px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 64px;
     line-height: 75px;
-    
     color: #03A688;
-}
+}*/
 
 h2 {
     position: absolute;
-width: 177px;
-height: 42px;
-left: 1141px;
-top: 60px;
+    width: 177px;
+    height: 42px;
+    left: 1141px;
+    top: 60px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 36px;
-line-height: 42px;
-display: flex;
-align-items: center;
-text-align: right;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: right;
 
-color: #03A688;
+    color: #03A688;
+}
+
+.hero {
+    height: 280px;
+    width: 100%;
+    margin-bottom: 25px;
+    /* background-image: url("../images/digital-marketing-meeting.jpg");
+    background-size: cover;
+    background-position: center; */
+    position: relative;
+}
+
+main {
+    margin: 20px auto;
+    width: 94%;
 }
 
 .page-title {
-    position: absolute;
+    /*position: absolute;*/
     width: 1196px;
     height: 88px;
 }
@@ -84,7 +154,7 @@ color: #F2F2F2;
     width: 1196px;
     height: 278px;
     left: 122px;
-    top: 136px;
+    /*top: 136px;*/
     background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
     border-radius: 21px; ;
 }

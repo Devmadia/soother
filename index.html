@@ -10,11 +10,14 @@
 
 <body>
     <!-- Navigation header -->
-        <header class="hero">
-            <div class="page-title">
-                <h3>sootheR</h3><!--<img class="img-reader" src="./assets/newspaper.png"></img> -->
-                <h2>hello, lovely</h2>
-            </div>
+        <header>
+            <h1>soothe<span class="R">R</span></h1>
+            <nav>
+                <ul>
+                    <!--<img class="img-reader" src="./assets/newspaper.png"></img> -->
+                    <li>hello, lovely</li>
+                </ul>
+            </nav>
             <!-- Navigation header ends-->
             
             <!-- Random Quote -->
@@ -29,40 +32,56 @@
             <!-- Random Quote ends -->
         </header>
    
+        <section class="hero"></section>
+
         <main>
             <!-- UL lists temporarily staged for left side bar as static displays -->
-            <div class="grid-x grid-padding-x"> <!-- Auto sizing Foundation elements set to sidebar width of 4 -->
-                <div class="cell small-4 flex-container flex-dir-column">
-                    <!-- articles searched appear here by title-->
-                    <div id="saved-container" class="callout primary flex-child-auto">
-                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Auto</ul>
-                    </div>
+            <div class="grid-container"> <!-- Auto sizing Foundation elements set to sidebar width of 4 -->
+                <div class="grid-x grid-margin-x" data-equalize-on="medium" data-equalizer="foo">
+                    <div class="cell medium-4">
+                        <div class="callout" data-equalizer-watch="foo" data-equalizer="bar" data-equalize-on-stack="true">
+                            <h3>Sidebar panel</h3>
+                                <!-- articles searched appear here by title-->
+                                <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 1</ul>
+                                        <li>.</li>
+                                        <li>.</li>
+                                        <li>.</li>
+                                </div>
 
-                    <div id="saved-container" class="callout primary flex-child-auto">
-                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Auto</ul>
-                    </div>
+                                <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 2</ul>
+                                        <li>.</li>
+                                        <li>.</li>
+                                        <li>.</li>
+                                </div>
 
-                    <div id="saved-container" class="callout primary flex-child-shrink">
-                        <ul class="list-group" id="saved-articles" onclick="priorCity()">Shrink</ul>
+                                <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 3</ul>
+                                        <li>.</li>
+                                        <li>.</li>
+                                        <li>.</li>
+                                </div>
+                        </div>
                     </div>
                 </div>
             
                 <!-- Element for Search Field -->
-                <div class="auto"> <!-- Auto sizing Foundation element set to "auto" for "whatever's left" after sidebar is constructed -->
-                    <div class="grid-container">
-                        <div id="search-field" class="grid-x grid-margin-x">
-                            <div class="medium-6 cell">
-                                <form id="user-form" class="">
-                                    <label class="form-label" for="news-search"></label>
-                                    <input name="sfield" id="sfield" type="text" autofocus="true" class="form-input" />
-                                    <button type="submit" class="btn">Search Btn</button>
-                                </form>
+                <div class="cell medium-8">
+                    <div class="callout panel" data-equalizer-watch="foo">
+                        
+                            <div class="cell medium-6">
+                                <label class="" for="news-search"></label><!--  -->
+                                <input name="sfield" id="sfield" type="search" placeholder="search" />
+                                <button type="button small" class="success button">Search</button></label>
                             </div>
+                        
 
+                        <div class="callout panel" data-equalizer-watch="foo">
                             <!-- Element for Search Results Container -->
-                            <div id="search-results">
+                            <div id="" class="medium-6 cell">
                                 <!-- Element for Styled Results -->
-                                <div class="">
+                                <div class="medium-6 cell">
                                     Search Results
                                 </div>
                             </div>
@@ -70,7 +89,7 @@
                     </div>
                 </div>    
             </div>
-
+        
         <script src="./assets/js/config.js"></script>    
         <script src="./assets/js/main.js"></script>
     </main>
