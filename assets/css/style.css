@@ -76,6 +76,29 @@ header nav ul li a {
     font-size: xx-large;
 }
 
+/* fixes issues with alignment of button and input field */
+input[type="text"], textarea {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+#searchField, #button {
+    display:line;
+    width:80%;
+}
+/*end of styling to fix button and input field alignment */
+
+#input-container {
+    text-align: center;
+}
+
+#min-height {
+    min-height: 650px;
+}
+
+#insert-minheight {
+    min-height: 550px;
+}
 
 /*h3 {
     position: absolute;
