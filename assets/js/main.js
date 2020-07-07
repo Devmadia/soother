@@ -12,8 +12,23 @@ $("#search-button").on("click", function() {
         alert("You must enter a search term!");
     }
     $("#searchField").val(""); // clears the field after user successfully enters a search term
+    addArticle(searchTerm)
     getNews(searchTerm)
 })
+
+// when previously searched term is clicked, bring up articles
+function priorArticle(){
+    getNews(event.target.innerText);
+}
+
+// creating the searched terms' list
+function addArticle(news) {
+    // introduces a list item element
+    var listArticle = $("<li>").addClass("list-group-item list-group-item-action").text(news);  //need to define 
+    // adds the searched term to the ul with a class of searched-articles
+    $("#searched-articles").append(listArticle);
+    saveArticle(news);
+}
 
 // save searched terms to local storage for retrieval
 function saveArticle(news) {
@@ -23,48 +38,23 @@ function saveArticle(news) {
     localStorage.setItem('userInput', JSON.stringify(searchList));
 }
 
-// creating the searched terms' list
-function addArticle(news) {
-    // introduces a list item element
-    var listArticle = $("<li>").addClass("list-group-item list-group-item-action").text(article);
-    // adds the searched term to the ul with a class of saved-articles
-    $("#saved-articles").append(listArticle);
-    saveArticle(news);
-}
-
+// gathering the news for searched term and storing searched term in an array to call on later
 function getNews(searchTerm) {
-    fetch(url).then(function(response) {
+    fetch(url + searchTerm + '&' + newsKL).then(function(response) {
         if (response.ok) {
             response.json()
             .then(function(response) {
                 if (!searchList.includes(response.name)) {
-                    addArticle(response.name);
+                    console.log(response);
+                    //addArticle(response.name);
                 }
                 
+                // code for inserting article headers/image/abstract/date/src
             })
         }
     })
 }
 
-getNews()
-
-
- /*   /**/
-/*
-
-
-function addArticle(news) {
-    var listArticle = $("<li>").addClass("list-group-item list-group-item-action").text(article);
-    $("#saved-articles").append(listArticle);
-    saveArticle(news);
-}
-
-fetch(url + searchTerm + '&' + newsKL)
-    .then(function(response) {
-        response.json().then(function(data) {
-            console.log(data);
-        })
-    })
 
 function loadArticle() {
     var storedArticle = localStorage.getItem('userInput');
@@ -79,4 +69,4 @@ function loadArticle() {
     }
 }
 
-loadArticle() */
+loadArticle()

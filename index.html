@@ -44,21 +44,18 @@
                             <h3>Sidebar panel</h3>
                                 <!-- articles searched appear here by title-->
                                 <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 1</ul>
+                                    <ul class="list-group" id="searched-articles" onclick="priorArticle()">Searched Terms</ul>
+                                </div>
+
+                                <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                                    <ul class="list-group" id="saved-articles" onclick="function()">Article Collective 2</ul>
                                         <li>.</li>
                                         <li>.</li>
                                         <li>.</li>
                                 </div>
 
                                 <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 2</ul>
-                                        <li>.</li>
-                                        <li>.</li>
-                                        <li>.</li>
-                                </div>
-
-                                <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                                    <ul class="list-group" id="saved-articles" onclick="priorCity()">Article Collective 3</ul>
+                                    <ul class="list-group" id="top-articles" onclick="function()">Article Collective 3</ul>
                                         <li>.</li>
                                         <li>.</li>
                                         <li>.</li>
@@ -73,7 +70,7 @@
                         
                             <div class="cell medium-6">
                                 <label class="" for="news-search"></label><!--  -->
-                                <input name="searchitem" id="searchField" type="search" placeholder="search" autofocus="true" />
+                                <input name="searchitem" id="searchField" type="text" placeholder="search" autofocus="true" />
                                 <button type="button small submit" id="search-button" class="success button"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                         
