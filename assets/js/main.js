@@ -2,23 +2,6 @@
 
 // javascript code for application
 
-// https://stackoverflow.com/questions/61951713/problem-with-cors-policy-when-making-a-request-to-https-newsapi-org
-const proxyUrl = "https://cors-anywhere.herokuapp.com/"
-// const qInTitle = "";
-// const from = "";
-// const apiKey = "";
-const url = `${proxyUrl}https://newsapi.org/v2/everything?language=en&apiKey=${newsKL}`;
-const request = new Request(url);
-
-fetch(request)
-  .then(response => response.json())
-  .then((news) => {
-    console.log(news);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-
 */
 
 var searchList = [];
