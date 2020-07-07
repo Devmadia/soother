@@ -49,49 +49,49 @@
       <!-- UL lists temporarily staged for left side bar as static displays -->
       <div class="grid-container">
         <div class="grid-x grid-margin-x" data-equalize-on="medium" data-equalizer="foo">
-          <div class="cell medium-4">
-            <div class="callout" data-equalizer-watch="foo" data-equalizer="bar" data-equalize-on-stack="true">
-              <h3>Sidebar panel</h3>
-              <!-- articles searched appear here by title-->
-              <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                <ul class="list-group" id="searched-articles" onclick="priorArticle()">
-                  Searched Terms
-                </ul>
-              </div>
+            <div class="cell medium-4">
+                <div class="callout" data-equalizer-watch="foo" data-equalizer="bar" data-equalize-on-stack="true" id="min-height">
+                    <h3>Sidebar panel</h3>
+                    <!-- articles searched appear here by title-->
+                    <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                        <ul class="list-group" id="searched-articles" onclick="priorArticle()">
+                            Searched Terms
+                        </ul>
+                    </div>
 
-              <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                <ul class="list-group" id="saved-articles" onclick="function()">
-                  Article Collective 2
-                </ul>
-              </div>
+                    <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                        <ul class="list-group" id="saved-articles" onclick="function()"> <!-- function needs generating -->
+                            Article Collective 2
+                        </ul>
+                    </div>
 
-              <div id="saved-container" class="callout" data-equalizer-watch="bar">
-                <ul class="list-group" id="top-articles" onclick="function()">
-                  Article Collective 3
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="cell medium-8">
-            <div class="callout panel" data-equalizer-watch="foo">
-              <div class="cell medium-6">
-                <label class="" for="news-search"></label><!--  -->
-                <input name="searchitem" id="searchField" type="text" placeholder="search" autofocus="true" />
-                <button type="button small submit" id="search-button" class="success button" ><i class="fa fa-search" aria-hidden="true"></i></button>
-              </div>
-
-              <div class="callout panel" data-equalizer-watch="foo">
-                <!-- Element for Search Results Container -->
-                <div id="" class="medium-6 cell">
-                  <!-- Element for Styled Results -->
-                  <div class="medium-6 cell">
-                    Search Results
-                  </div>
+                    <div id="saved-container" class="callout" data-equalizer-watch="bar">
+                        <ul class="list-group" id="top-articles" onclick="function()"> <!-- function needs generating -->
+                            Article Collective 3
+                        </ul>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <div class="cell medium-8">
+                <div class="callout panel" data-equalizer-watch="foo" id="min-height">
+                    <div class="cell medium-6" id="input-container">
+                        <label class="" for="news-search"></label><!-- class not yet defined -->
+                        <input name="searchitem" id="searchField" type="text" placeholder="search" autofocus="true" />
+                        <button type="button small submit" id="search-button" class="success button" ><i class="fa fa-search " aria-hidden="true"></i></button></span> <!-- button needs re-alignment to side of input field -->
+                    </div>
+
+                    <div class="callout panel" data-equalizer-watch="foo" id="insert-minheight">
+                        <!-- Element for Search Results Container -->
+                        <div id="" class="medium-6 cell">
+                            <!-- Element for Styled Results -->
+                            <div class="medium-6 cell">
+                                Search Results
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
       <script
