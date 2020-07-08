@@ -1,5 +1,7 @@
 // array for storing searchTerms
 var searchList = [];
+var articles = [];
+var noImgArt = [];
 
 // Array to hold the various article info
 // var articleCounter = 0;
@@ -22,8 +24,7 @@ $("#search-button").on("click", function() {
 // gathering the news for searched term and storing searched term in an array to call on later
 function getNews(searchTerm) {
     // let articlesRetrieved = response.docs;
-    var articles = []
-    var noImgArt = []
+
 
     fetch(url + searchTerm + '&' + newsKL).then(function(response) {
         if (response.ok) {
@@ -34,26 +35,28 @@ function getNews(searchTerm) {
                     
                         // if image is available, push to articles array
                         if (response.response.docs[i].multimedia.length > 0) { 
-                            articles.push(response.response.docs[i]);
+                            articles.push(response.response.docs[i].headline.main + response.response.docs[i].multimedia[0].url + response.response.docs[i].web_url);
                             console.log(response.response.docs[i].headline.main + response.response.docs[i].multimedia[0].url + response.response.docs[i].web_url);
                         }
                         
                         // if image is not available, push to noImgArt array
                         else { 
-                            noImgArt.push(response.response.docs[i]);
+                            noImgArt.push(
+                                {"headline" : response.response.docs[i].headline.main, "url" : response.response.docs[i].web_url});
                             console.log(response.response.docs[i].headline.main + response.response.docs[i].web_url);
                         }
                     }
                 }
                          
-                // code for inserting article headers/image/abstract/date/src
-                $("#currentNews")
-                    .text(response.response.docs[0].headline.print_headline);
+                // generates information for first article element
+                var title = response.response.docs[0].headline.main;
                 $("#newsLead").text(response.response.docs[0].lead_paragraph);
-                $("#newsURL").text(response.response.docs[0].web_url);
+                var link = response.response.docs[0].web_url;
                 var newsImage = response.response.docs[0].multimedia[0].url;
                 var image = $("<img>").attr("src", "https://nytimes.com/" + newsImage);
-                $("#currentNews").append(image);
+                $("#newsOne").append(image);
+                $("#titleOne").append(title);
+                $("#urlOne").append(link);
             })
         }
     })
