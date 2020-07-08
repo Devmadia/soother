@@ -35,7 +35,8 @@ function getNews(searchTerm) {
                     
                         // if image is available, push to articles array
                         if (response.response.docs[i].multimedia.length > 0) { 
-                            articles.push(response.response.docs[i].headline.main + response.response.docs[i].multimedia[0].url + response.response.docs[i].web_url);
+                            articles.push(
+                                {"headline" : response.response.docs[i].headline.main, "image" : response.response.docs[i].multimedia[0].url, "url" : response.response.docs[i].web_url});
                             console.log(response.response.docs[i].headline.main + response.response.docs[i].multimedia[0].url + response.response.docs[i].web_url);
                         }
                         
