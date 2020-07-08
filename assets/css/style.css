@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* styling for application page */
 /* global styles */
 
@@ -13,9 +14,23 @@
   --tertiary:#D9B19A;
   --purple: #595FD9;
   --white: #f2f2f2;
+=======
+
+foundation-palette {
+    --primary: #F26457;
+    --secondary: #497980;
+    --tertiary:#D9B19A;
+    --purple: #595FD9;
+    --white: #f2f2f2;
+>>>>>>> feature/global
 }
 
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
 body {
+<<<<<<< HEAD
     margin: auto;
     position: relative;
     width: 1440px;
@@ -101,6 +116,18 @@ input[type="text"], textarea {
 }
 
 /*h3 {
+=======
+    margin: 0; }
+
+
+
+.soother-title {
+font-family: Roboto;
+color: #03A688;
+}
+
+/*.hello {
+>>>>>>> feature/global
     position: absolute;
     left: 122px;
     font-family: Roboto;
@@ -110,6 +137,7 @@ input[type="text"], textarea {
     line-height: 75px;
     color: #03A688;
 }*/
+<<<<<<< HEAD
 
 h2 {
     position: absolute;
@@ -150,29 +178,22 @@ main {
     width: 1196px;
     height: 88px;
 }
+=======
+>>>>>>> feature/global
 
 .img-reader {
     position: absolute;
-width: 67px;
-height: 80px;
-
-background: url(.png), #FFFFFF;
+    width: 67px;
+    height: 80px;
+    background: url(.png), #FFFFFF;
 }
 
-p {
-    position: absolute;
-font-family: Roboto;
-font-style: italic;
-font-weight: 300;
-font-size: 40px;
-line-height: 47px;
-display: flex;
-align-items: center;
-text-align: center;
-padding: 20px 60px;
-color: #F2F2F2;
+.quote-bckg {
+background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+border-radius: 21px;
 }
 
+<<<<<<< HEAD
 .quote-wrapper {
     position: absolute;
     width: 1196px;
@@ -185,6 +206,10 @@ color: #F2F2F2;
 
 .quote-wrapper p {
     color: var(--white);
+=======
+.results {
+    border-radius: 21px
+>>>>>>> feature/global
 }
 
 .btn {
@@ -195,6 +220,17 @@ color: #F2F2F2;
 
 }
 
-footer {
+/* Small only */
+@media screen and (max-width: 39.9375em) {}
 
-}
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
