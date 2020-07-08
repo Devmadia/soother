@@ -1,10 +1,10 @@
 
-:root {
-  --primary: #F26457;
-  --secondary: #497980;
-  --tertiary:#D9B19A;
-  --purple: #595FD9;
-  --white: #f2f2f2;
+foundation-palette {
+    --primary: #F26457;
+    --secondary: #497980;
+    --tertiary:#D9B19A;
+    --purple: #595FD9;
+    --white: #f2f2f2;
 }
 
 html {
@@ -17,19 +17,7 @@ body {
 
 
 .soother-title {
-position: absolute;
-width: 177px;
-height: 42px;
-left: 1141px;
-top: 60px;
 font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 36px;
-line-height: 42px;
-display: flex;
-align-items: center;
-text-align: right;
 color: #03A688;
 }
 
@@ -44,45 +32,20 @@ color: #03A688;
     color: #03A688;
 }*/
 
-
-
-.page-title {
-    position: absolute;
-    width: 1196px;
-    height: 88px;
-}
-
 .img-reader {
     position: absolute;
-width: 67px;
-height: 80px;
-
-background: url(.png), #FFFFFF;
+    width: 67px;
+    height: 80px;
+    background: url(.png), #FFFFFF;
 }
 
-.callout {
-    position: relative;
-    margin: 0 0 1rem 0;
-    padding: 1rem;
-    border: 1px solid rgba(10, 10, 10, 0.25);
-    border-radius: 0;
-    background-color: white;
-    color: #0a0a0a; }
-    .callout.small {
-        padding-top: 0.5rem;
-        padding-right: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem; };
-    .callout.large {
-        padding-top: 3rem;
-        padding-right: 3rem;
-        padding-bottom: 3rem;
-        padding-left: 3rem; };
-
-
 .quote-bckg {
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
 border-radius: 21px;
+}
+
+.results {
+    border-radius: 21px
 }
 
 .btn {
