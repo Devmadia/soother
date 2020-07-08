@@ -1,10 +1,14 @@
 
 foundation-palette {
     --primary: #F26457;
-    --secondary: #497980;
-    --tertiary:#D9B19A;
+    --secondary: #03A688;
+    --tertiary:#F28177;
     --purple: #595FD9;
+    --orange: #F2913D;
     --white: #f2f2f2;
+}
+* {
+    font-family: Roboto;
 }
 
 html {
@@ -13,8 +17,6 @@ html {
 }
 body {
     margin: 0; }
-
-
 
 .soother-title {
 font-family: Roboto;
@@ -40,12 +42,18 @@ color: #03A688;
 }
 
 .quote-bckg {
-background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
-border-radius: 21px;
+    background: linear-gradient(256.48deg, #F26457 30.41%, #F2913D 77.97%);
+    border-radius: 21px;
+}
+
+h3,
+h5 {
+    color: var(--white);
+    font-family: Roboto, serif;
 }
 
 .results {
-    border-radius: 21px
+    border-radius: 21px;
 }
 
 .btn {
@@ -54,6 +62,12 @@ border-radius: 21px;
 
 .btn:hover {
 
+}
+
+.search-results {
+    background: linear-gradient(180deg, rgba(3, 166, 136, 0.8) 0%, rgba(89, 95, 217, 0.8) 100%);
+mix-blend-mode: normal;
+border-radius: 21px;
 }
 
 /* Small only */
