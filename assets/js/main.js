@@ -22,22 +22,6 @@ fetch(request)
 */
 
 
-// test quote API
-fetch("https://healthruwords.p.rapidapi.com/v1/quotes/?id=731&t=Wisdom&maxR=1&size=medium", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "healthruwords.p.rapidapi.com",
-		"x-rapidapi-key": "77f5b80be4mshdc72a777a7a926bp11a84ajsnc28a0268f4d5"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
-
-
 
 var searchList = [];
 
