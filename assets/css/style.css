@@ -1,82 +1,27 @@
-/* styling for application page */
-/* global styles */
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+foundation-palette {
+    --primary: #F26457;
+    --secondary: #497980;
+    --tertiary:#D9B19A;
+    --purple: #595FD9;
+    --white: #f2f2f2;
 }
 
-:root {
-  --primary: #F26457;
-  --secondary: #497980;
-  --tertiary:#D9B19A;
-  --purple: #595FD9;
-  --white: #f2f2f2;
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
 }
-
 body {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    background: #FFFFFF;
+    margin: 0; }
+
+
+
+.soother-title {
+font-family: Roboto;
+color: #03A688;
 }
 
-header h1 {
-    display: inline;
-    font-size: 48px;
-    margin: 30px;
-    color: #1e684f;
-}
-
-header h1 .R {
-    color: #58a8d6;
-}
-
-header div {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    padding-top: 15px;
-    margin-right: 20px;
-    float: right;
-    font-size: 20px;
-}
-
-header div ul {
-    list-style-type: none;
-}
-
-header div ul li {
-    display: inline;
-    margin-left: 25px;
-}
-
-header a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-header nav {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #1e684f;
-    float: right;
-    margin: 20px 0;
-}
-
-header nav ul li {
-    display: inline;
-    font-size: xx-large;
-}
-
-header nav ul li a {
-    margin: 0 30px;
-    font-weight: lighter;
-    font-size: xx-large;
-}
-
-
-/*h3 {
+/*.hello {
     position: absolute;
     left: 122px;
     font-family: Roboto;
@@ -87,80 +32,20 @@ header nav ul li a {
     color: #03A688;
 }*/
 
-h2 {
-    position: absolute;
-    width: 177px;
-    height: 42px;
-    left: 1141px;
-    top: 60px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
-    display: flex;
-    align-items: center;
-    text-align: right;
-
-    color: #03A688;
-}
-
-.hero {
-    height: 280px;
-    width: 100%;
-    margin-bottom: 25px;
-    /* background-image: url("../images/digital-marketing-meeting.jpg");
-    background-size: cover;
-    background-position: center; */
-    position: relative;
-}
-
-main {
-    margin: 20px auto;
-    width: 94%;
-}
-
-.page-title {
-    /*position: absolute;*/
-    width: 1196px;
-    height: 88px;
-}
-
 .img-reader {
     position: absolute;
-width: 67px;
-height: 80px;
-
-background: url(.png), #FFFFFF;
+    width: 67px;
+    height: 80px;
+    background: url(.png), #FFFFFF;
 }
 
-p {
-    position: absolute;
-font-family: Roboto;
-font-style: italic;
-font-weight: 300;
-font-size: 40px;
-line-height: 47px;
-display: flex;
-align-items: center;
-text-align: center;
-padding: 20px 60px;
-color: #F2F2F2;
+.quote-bckg {
+background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+border-radius: 21px;
 }
 
-.quote-wrapper {
-    position: absolute;
-    width: 1196px;
-    height: 278px;
-    left: 122px;
-    /*top: 136px;*/
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
-    border-radius: 21px; ;
-}
-
-.quote-wrapper p {
-    color: var(--white);
+.results {
+    border-radius: 21px
 }
 
 .btn {
@@ -171,6 +56,17 @@ color: #F2F2F2;
 
 }
 
-footer {
+/* Small only */
+@media screen and (max-width: 39.9375em) {}
 
-}
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}

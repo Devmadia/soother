@@ -1,22 +1,19 @@
 // test quote API
-// https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?
-fetch("https://api.forismatic.com/api/1.0/method=getQuote&key=457653&format=xml&lang=en", {
-})
-.then(function(response) {
-    return response.json();
-})
-.then(function(response) {
-    console.log(response);
-    //console.log(response[0].media);
-    var quoteContainerEl = document.querySelector("#quote");
-    var quoteImg = document.createElement("img");
-    //quoteImg.setAttribute('src', response[0].media);
-    quoteContainerEl.appendChild(quoteImg);
+var html = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?";
 
-    
-});
+// Create function for random quote
+var getQuote=function(data){
+  console.log(data);
+ 
+  $('#quote').text(data.quoteText);
+  // $('#author').text(data.quoteAuthor);
+};
 
 
-// pull quote into hero
+  
+// Pull quote into hero
+$.getJSON(html, getQuote, 'jsonp');
+
+
 
 
