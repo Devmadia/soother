@@ -30,6 +30,9 @@
   - New York Times Article Search API
   - TBD
 
+- Graphic Souces:
+  - Search by Fahmi from the Noun Project
+
 ![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR-basic.png)
 
 ![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/soother-001.png)
