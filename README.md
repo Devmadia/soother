@@ -25,5 +25,6 @@ SootheR is a news reader for relevant articles with an intuitive user interface 
 - API(s):
   - New York Times Article Search API
   - ???
-
+-Images
+  - Search by Fahmi from the Noun Project
 Screen Shots
