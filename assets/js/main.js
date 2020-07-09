@@ -9,8 +9,10 @@ var searchList = []; // array to save article titles that persist on refresh bas
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
 // search button activation function
-$("#search-button").on("click", function() {
-    // cancels the event if it is cancelable
+$("#searchField").keypress("click", function(e) {
+
+    if (e.which == 13) {
+       // cancels the event if it is cancelable
     event.preventDefault(); 
     var searchTerm = $("#searchField").val();
     if (searchTerm === ''){ // user does not enter or pick a search term
@@ -19,6 +21,7 @@ $("#search-button").on("click", function() {
     $("#searchField").val(""); // clears the field after user successfully enters a search term
     // addArticle(searchTerm)
     getNews(searchTerm)
+    }
 })
 
 // gathering the news for searched term and storing searched term in an array to call on later
