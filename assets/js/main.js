@@ -1,7 +1,7 @@
 // array for storing searchTerms
 var searchList = []; // array to save article titles that persist on refresh based on user interaction
-var articles = []; // need articles to clear upon new search
-var noImgArt = []; // need noImgArt to clear upon new search
+// var articles = []; // need articles to clear upon new search
+// var noImgArt = []; // need noImgArt to clear upon new search
 
 // Array to hold the various article info
 // var articleCounter = 0;
@@ -24,17 +24,19 @@ $("#search-button").on("click", function() {
 // gathering the news for searched term and storing searched term in an array to call on later
 function getNews(searchTerm) {
 
-    // var articles = []; // need articles to clear upon new search
-    // var noImgArt = []; // need noImgArt to clear upon new search
-
     // fetch news based on searchTerm entered by user through on-click input
     fetch(url + searchTerm + '&' + newsKL).then(function(response) {
         if (response.ok) {
             response.json()
             .then(function(response) {
                 if (!searchList.includes(response.response.docs)) {
+                    // clears arrays before for-loop is run
+                    var articles = [];
+                    var noImgArt = [];
+
                     for (var i = 0; i < response.response.docs.length; i++) {
-                    
+                        // console.log(response.response.docs[i].abstract);
+
                         // if image is available, push to articles array
                         if (response.response.docs[i].multimedia.length > 0) { 
                             articles.push(
@@ -50,22 +52,26 @@ function getNews(searchTerm) {
                         else { 
                             noImgArt.push(
                                 {"headline" : response.response.docs[i].headline.main, 
-                                "url" : response.response.docs[i].web_url}
+                                "url" : response.response.docs[i].web_url,
+                                "abstract" : response.response.docs[i].abstract}
                             );
 
                             console.log(response.response.docs[i].headline.main + response.response.docs[i].web_url);
                         }
                     }
-                    makeCard()
+                    makeCard(articles, noImgArt)
                 }
             })
         }
     })
 }
 
-// makeCard(articles) : this passes articles from the getNews articles array to the function below
-function makeCard() {
+// makeCard(articles, noImgArt) : this passes articles from the getNews articles array to the function below
+function makeCard(articles, noImgArt) {
 
+    // clears div contents
+    $("#newsResults").empty();
+    $("#otherResults").empty();
     /* current error persists with the fact this is generated 
     from the entire searchList, not from a specific array made with the image check */ 
 
@@ -77,7 +83,7 @@ function makeCard() {
                 // generates information for first article element
                 var titleOne = articles[i].headline;
                 
-                var linkOne = articles[i].url;
+                // var linkOne = articles[i].url;
                 
                 var titleLink = $("<a>");
 
@@ -118,7 +124,34 @@ function makeCard() {
                 // $("#titleThree").append(titleThree);
                 // $("#urlThree").append(linkThree);
     }
-
+    
+    if (noImgArt.length == 0) {
+        $("#otherResults").append("No results without images found.");
+    }
+    else { 
+        for (var i = 0; i < noImgArt.length; i++) {
+            // 
+                var titleOne = noImgArt[i].headline;
+                var titleLink = $("<a>");
+                
+                // retrieves titleLinkfrom the variable, thus remains set to [0]
+                titleLink[0].href=noImgArt[i].url;
+                titleLink.html(titleOne);
+                // var newsImageOne = noImgArt[i].image;
+                // var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
+                // $("#image").append(imageOne);
+                // $("#titleOne").append(titleLink); // target link open in new tab
+                // var insertImage = $("<p>").attr('id', 'image');
+                var insertTitle = $("<p>").attr('id', 'title');
+                var insertAbstract = $("<p>").attr('id', 'abstract');
+                // var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
+                insertTitle.append(titleLink);
+                // insertImage.append(image);
+                insertAbstract.append(noImgArt[i].abstract);
+                // outerBox.append(innerBox);
+                $("#otherResults").append(insertTitle, insertAbstract);
+        }
+    }
 }
 
 // save searched terms to local storage for retrieval
