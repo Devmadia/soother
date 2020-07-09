@@ -1,10 +1,5 @@
 // array for storing searchTerms
 var searchList = []; // array to save article titles that persist on refresh based on user interaction
-// var articles = []; // need articles to clear upon new search
-// var noImgArt = []; // need noImgArt to clear upon new search
-
-// Array to hold the various article info
-// var articleCounter = 0;
 
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
@@ -81,52 +76,29 @@ function makeCard(articles, noImgArt) {
     for (var i = 0; i < articles.length; i++) {
                     
         // if image is available in article, which should be as it retrieves from the articles array
-        // if (articles[i] > 0) {
+        
+        // generates information for first article element
+        var titleOne = articles[i].headline;
+        
+        // opens target link in new window
+        var titleLink = $("<a>").attr("target", "_blank");
 
-                // generates information for first article element
-                var titleOne = articles[i].headline;
-                
-                // var linkOne = articles[i].url;
-                
-                // opens target link in new window
-                var titleLink = $("<a>").attr("target", "_blank");
-
-                // retrieves titleLinkfrom the variable, thus remains set to [0]
-                titleLink[0].href=articles[i].url;
-                titleLink.html(titleOne);
-                var newsImageOne = articles[i].image;
-                var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
-                // $("#image").append(imageOne);
-                // $("#titleOne").append(titleLink); // target link open in new tab
-                var insertImage = $("<p>").attr('id', 'image');
-                var insertTitle = $("<p>").attr('id', 'title');
-                var innerBox = $("<div>").addClass("primary-callout callout results");
-                var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
-                insertTitle.append(titleLink);
-                insertImage.append(image);
-                innerBox.append(insertImage, insertTitle);
-                outerBox.append(innerBox);
-                $("#newsResults").append(outerBox);
-
-                // // generates information for second article element
-                // var titleTwo = response.response.docs[1].headline.main;
-                // // $("#newsLead").text(response.response.docs[1].lead_paragraph);
-                // var linkTwo = response.response.docs[1].web_url;
-                // var newsImageTwo = response.response.docs[1].multimedia[0].url;
-                // var imageTwo = $("<img>").attr("src", "https://nytimes.com/" + newsImageTwo);
-                // $("#newsTwo").append(imageTwo);
-                // $("#titleTwo").append(titleTwo);
-                // $("#urlTwo").append(linkTwo);
-
-                // // generates information for three article element
-                // var titleThree = response.response.docs[2].headline.main;
-                // // $("#newsLead").text(response.response.docs[1].lead_paragraph);
-                // var linkThree = response.response.docs[2].web_url;
-                // var newsImageThree = response.response.docs[2].multimedia[0].url;  // third article does not have an image, thus an error begins
-                // var imageThree = $("<img>").attr("src", "https://nytimes.com/" + newsImageThree);
-                // $("#newsThree").append(imageThree);
-                // $("#titleThree").append(titleThree);
-                // $("#urlThree").append(linkThree);
+        // retrieves titleLinkfrom the variable, thus remains set to [0]
+        titleLink[0].href=articles[i].url;
+        titleLink.html(titleOne);
+        var newsImageOne = articles[i].image;
+        var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
+        // $("#image").append(imageOne);
+        // $("#titleOne").append(titleLink); // target link open in new tab
+        var insertImage = $("<p>").attr('id', 'image');
+        var insertTitle = $("<p>").attr('id', 'title');
+        var innerBox = $("<div>").addClass("primary-callout callout results");
+        var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
+        insertTitle.append(titleLink);
+        insertImage.append(image);
+        innerBox.append(insertImage, insertTitle);
+        outerBox.append(innerBox);
+        $("#newsResults").append(outerBox);
     }
     
     if (noImgArt.length == 0) {
