@@ -1,4 +1,4 @@
-### SootheR
+### sootheR
 
 **SUMMARY**
 
