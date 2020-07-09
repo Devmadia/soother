@@ -14,7 +14,14 @@ html {
 body {
     margin: 0; }
 
-
+.quote {
+    color: white;
+    font-family: roboto;
+    font-style: italic;
+    font-weight: 200;
+    font-size: 34px; 
+    align-items: center;  
+}
 
 .soother-title {
 font-family: Roboto;
@@ -22,15 +29,14 @@ color: #03A688;
 }
 
 /*.hello {
-    position: absolute;
-    left: 122px;
+
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
     color: #03A688;
 }*/
+
+
 
 .img-reader {
     position: absolute;
@@ -43,6 +49,16 @@ color: #03A688;
 background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
 border-radius: 21px;
 }
+  
+.search-form {
+    background-image: url("magnifying_glass.png");
+    /*background-position: 0.625rem 0.625rem;*/
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
+    padding: 1.2rem;
+} 
 
 .results {
     border-radius: 21px
