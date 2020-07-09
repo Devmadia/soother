@@ -46,11 +46,11 @@ color: #03A688;
     border-radius: 21px;
 }
 
-h3,
+/*h3,
 h5 {
     color: var(--white);
     font-family: Roboto, serif;
-}
+}*/
 
 .results {
     border-radius: 21px;
