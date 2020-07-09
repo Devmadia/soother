@@ -143,7 +143,7 @@ function makeCard(articles, noImgArt) {
 }
 
 // // save searched terms to local storage for retrieval
-// function saveArticle(news) {
+// function saveLocalCopy(news) {
 //     // adds new items to the end of an array and returns the new length
 //     searchList.push(news);
 //     // assigning saved search terms under the key 'userInput' within the array called searchList
