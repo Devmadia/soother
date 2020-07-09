@@ -1,7 +1,7 @@
 // array for storing searchTerms
-var searchList = [];
-var articles = [];
-var noImgArt = [];
+var searchList = []; // array to save article titles that persist on refresh based on user interaction
+var articles = []; // need articles to clear upon new search
+var noImgArt = []; // need noImgArt to clear upon new search
 
 // Array to hold the various article info
 // var articleCounter = 0;
@@ -23,6 +23,10 @@ $("#search-button").on("click", function() {
 
 // gathering the news for searched term and storing searched term in an array to call on later
 function getNews(searchTerm) {
+
+    // var articles = []; // need articles to clear upon new search
+    // var noImgArt = []; // need noImgArt to clear upon new search
+
     // fetch news based on searchTerm entered by user through on-click input
     fetch(url + searchTerm + '&' + newsKL).then(function(response) {
         if (response.ok) {
@@ -52,43 +56,69 @@ function getNews(searchTerm) {
                             console.log(response.response.docs[i].headline.main + response.response.docs[i].web_url);
                         }
                     }
+                    makeCard()
                 }
-                
-                /* current error persists with the fact this is generated 
-                from the entire searchList, not from a specific array made with the image check */ 
-
-                // generates information for first article element
-                var titleOne = response.response.docs[0].headline.main;
-                // $("#newsLead").text(response.response.docs[0].lead_paragraph);
-                var linkOne = response.response.docs[0].web_url;
-                var newsImageOne = response.response.docs[0].multimedia[0].url;
-                var imageOne = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
-                $("#newsOne").append(imageOne);
-                $("#titleOne").append(titleOne);
-                $("#urlOne").append(linkOne);
-
-                // generates information for second article element
-                var titleTwo = response.response.docs[1].headline.main;
-                // $("#newsLead").text(response.response.docs[1].lead_paragraph);
-                var linkTwo = response.response.docs[1].web_url;
-                var newsImageTwo = response.response.docs[1].multimedia[0].url;
-                var imageTwo = $("<img>").attr("src", "https://nytimes.com/" + newsImageTwo);
-                $("#newsTwo").append(imageTwo);
-                $("#titleTwo").append(titleTwo);
-                $("#urlTwo").append(linkTwo);
-
-                // generates information for three article element
-                var titleThree = response.response.docs[2].headline.main;
-                // $("#newsLead").text(response.response.docs[1].lead_paragraph);
-                var linkThree = response.response.docs[2].web_url;
-                var newsImageThree = response.response.docs[2].multimedia[0].url;  // third article does not have an image, thus an error begins
-                var imageThree = $("<img>").attr("src", "https://nytimes.com/" + newsImageThree);
-                $("#newsThree").append(imageThree);
-                $("#titleThree").append(titleThree);
-                $("#urlThree").append(linkThree);
             })
         }
     })
+}
+
+// makeCard(articles) : this passes articles from the getNews articles array to the function below
+function makeCard() {
+
+    /* current error persists with the fact this is generated 
+    from the entire searchList, not from a specific array made with the image check */ 
+
+    for (var i = 0; i < articles.length; i++) {
+                    
+        // if image is available in article, which should be as it retrieves from the articles array
+        // if (articles[i] > 0) {
+
+                // generates information for first article element
+                var titleOne = articles[i].headline;
+                
+                var linkOne = articles[i].url;
+                
+                var titleLink = $("<a>");
+
+                // retrieves titleLinkfrom the variable, thus remains set to [0]
+                titleLink[0].href=articles[i].url;
+                titleLink.html(titleOne);
+                var newsImageOne = articles[i].image;
+                var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
+                // $("#image").append(imageOne);
+                // $("#titleOne").append(titleLink); // target link open in new tab
+                var insertImage = $("<p>").attr('id', 'image');
+                var insertTitle = $("<p>").attr('id', 'title');
+                var innerBox = $("<div>").addClass("primary-callout callout results");
+                var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
+                insertTitle.append(titleLink);
+                insertImage.append(image);
+                innerBox.append(insertImage, insertTitle);
+                outerBox.append(innerBox);
+                $("#newsResults").append(outerBox);
+
+                // // generates information for second article element
+                // var titleTwo = response.response.docs[1].headline.main;
+                // // $("#newsLead").text(response.response.docs[1].lead_paragraph);
+                // var linkTwo = response.response.docs[1].web_url;
+                // var newsImageTwo = response.response.docs[1].multimedia[0].url;
+                // var imageTwo = $("<img>").attr("src", "https://nytimes.com/" + newsImageTwo);
+                // $("#newsTwo").append(imageTwo);
+                // $("#titleTwo").append(titleTwo);
+                // $("#urlTwo").append(linkTwo);
+
+                // // generates information for three article element
+                // var titleThree = response.response.docs[2].headline.main;
+                // // $("#newsLead").text(response.response.docs[1].lead_paragraph);
+                // var linkThree = response.response.docs[2].web_url;
+                // var newsImageThree = response.response.docs[2].multimedia[0].url;  // third article does not have an image, thus an error begins
+                // var imageThree = $("<img>").attr("src", "https://nytimes.com/" + newsImageThree);
+                // $("#newsThree").append(imageThree);
+                // $("#titleThree").append(titleThree);
+                // $("#urlThree").append(linkThree);
+    }
+
 }
 
 // save searched terms to local storage for retrieval
