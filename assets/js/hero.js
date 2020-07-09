@@ -6,7 +6,7 @@ var getQuote=function(data){
   console.log(data);
  
   $('#quote').text(data.quoteText);
-  // $('#author').text(data.quoteAuthor);
+  $('#author').text(data.quoteAuthor);
 };
 
 
