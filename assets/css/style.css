@@ -16,27 +16,36 @@ body {
 
 .quote {
     color: white;
-    font-family: roboto;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    font-weight: 200;
-    font-size: 34px; 
+    font-weight: lighter;
+    font-size: 24px; 
     align-items: center;  
+    text-align: center;
+    padding: 2rem;
 }
 
 .soother-title {
-font-family: Roboto;
-color: #03A688;
-}
-
-/*.hello {
-
     font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
     color: #03A688;
-}*/
-
-
+    text-align: left;
+    display: inline; 
+}
+.reader {
+    width: 56px;
+    height: 56px;
+    padding-left: 0.8rem;
+    padding-bottom: 1.3rem;
+    display: inline;
+}
+.hello {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    color: #03A688;
+    text-align: right;
+    padding-top: 2rem;
+    line-height: 1.4;
+}
 
 .img-reader {
     position: absolute;
@@ -48,10 +57,6 @@ color: #03A688;
 .quote-bckg {
 background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
 border-radius: 21px;
-}
-
-.read {
-    
 }
 
 .search-form {
@@ -69,13 +74,24 @@ border-radius: 21px;
 }
 
 .results {
-    border-radius: 21px
+    border-radius: 21px;
 }
 
-.btn {
-
+.read {
+    color: #0FA697;
+    font-size: 36px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 4px 4px
+        rgba(0, 0, 0, 0.25);
+    padding-bottom: 1rem;
 }
 
-.btn:hover {
-
+.later-results {
+    border-radius: 21px;
+    border-color: #03A688;
 }
+
+
+
