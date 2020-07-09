@@ -85,7 +85,8 @@ function makeCard(articles, noImgArt) {
                 
                 // var linkOne = articles[i].url;
                 
-                var titleLink = $("<a>");
+                // opens target link in new window
+                var titleLink = $("<a>").attr("target", "_blank");
 
                 // retrieves titleLinkfrom the variable, thus remains set to [0]
                 titleLink[0].href=articles[i].url;
@@ -132,7 +133,9 @@ function makeCard(articles, noImgArt) {
         for (var i = 0; i < noImgArt.length; i++) {
             // 
                 var titleOne = noImgArt[i].headline;
-                var titleLink = $("<a>");
+
+                // opens target link in new window
+                var titleLink = $("<a>").attr("target", "_blank");
                 
                 // retrieves titleLinkfrom the variable, thus remains set to [0]
                 titleLink[0].href=noImgArt[i].url;
