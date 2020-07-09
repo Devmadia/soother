@@ -28,6 +28,12 @@
 **Resources**
 - API(s):
   - New York Times Article Search API
+<<<<<<< HEAD
+  - ???
+-Images
+  - Search by Fahmi from the Noun Project
+Screen Shots
+=======
   - TBD
 
 - Graphic Souces:
@@ -38,3 +44,4 @@
 ![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/soother-001.png)
 
 ![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/soother-002.png)
+>>>>>>> develop

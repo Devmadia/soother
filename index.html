@@ -4,63 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=roboto">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/foundation.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>sootheR</title>
 </head>
 <body>
+    <!--Header-->
     <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-                <h1 class="soother-title">sootheR</h1> <!-- can we style the R to be slightly different in color to emphasize it? -->
-            </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-6 cell">
+          <h1 class="soother-title">SootheR</h1><img class="reader" src="./assets/soother.png"/>
         </div>
-  
-        <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-                <div class="callout quote-bckg">
-                    <h3>
-                        "Emerged into consciousness ... a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions."
-                        <br />
-                        -Quoted Person
-                    </h3>
-                </div>
-            </div>
+        <div class="large-6 cell"> 
+          <h2 class="hello"> hello lovley</h2>
         </div>
-        
+      </div>
+      <!--Quote Generating Jumbotron-->
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <div class="callout quote-bckg">
+            <h3 class="quote">"Emerged into consciousness ... a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions." </h3>
+          </div>
+        </div>
+      </div>
+      <!--Sidebar/ Saved Articles-->
+      <!-- localStorage elements will eventually generate here through main.js -->
+      <div class="grid-x grid-padding-x">
+        <div class="large-4 medium-4 small-4 cell">
+          <div class="primary-callout">
+            <h5 class="read">Read Me Later</h5>
+              <div class="callout later-results">
+              </div>
+              <div class="callout later-results">
+              </div>
+          </div>
+        </div>
+        <!--Content-->
+        <div class="large-8 medium-8 small-8 cell">
+        <!--Search Bar-->
         <div class="grid-x grid-padding-x">
-            <div class="large-4 medium-4 small-4 cell">
-                <div class="primary callout">
-                    <h5>Read Me Later</h5>
-                    <!-- localStorage elements will eventually generate here through main.js -->
-                    <div class="callout"></div>
-                </div>
-            </div>
-            <div class="large-8 medium-8 small-8 cell">
-                <div class="grid-x grid-padding-x">
-                    <div class="large-12 cell search">
-                        <!-- do not remove <form> from this or the input on <ENTER> option will stop working -->
-                        <form id="" class="">
-                            <label></label>
-                            <input name="searchitem" id="searchField" type="text" placeholder="Press <ENTER> to search." autofocus="true" />
-                        </form> <!-- button needs re-alignment to side of input field -->
-                    </div>
-                </div>  
-                <div class="large-8 medium-8 cell">
-                    <!-- newResults are generated here through main.js -->
-                    <div id="newsResults" class="grid-x grid-padding-x"></div>
-                        <div class="grid-x grid-padding-x">
-                            <div class ="large-12 medium-12 small-12 cell"><!--Add Accordion-->
-                                <div class="callout">
-                                    <h4>Other Search Results</h4>
-                                        <!-- otherResults are generated here through main.js -->
-                                        <p id="otherResults"></p>
-                                </div>
+          <div class="large-12 cell search later">
+            <!-- do not remove form from this or the input will stop working -->
+            <form id="" class=""><label></label>
+              <input name="searchitem" id="searchField" class="search-form later-results" type="text" placeholder="Press <ENTER> to search." autofocus="true" />
+              </form> <!-- button needs re-alignment to side of input field -->
+          </div>
+        </div>
+        <!--Search Result Cards-->
+        <div class="large-12 cell callout outer-results ">
+          <div class="grid-x grid-padding-x">
+        <!--Other Search Results-->
+            <div class="large-8 medium-8 cell"></div>
+                <!-- newResults are generated here through main.js -->
+                <div id="newsResults" class="grid-x grid-padding-x"></div>
+                    <div class="grid-x grid-padding-x">
+                        <div class ="large-12 medium-12 small-12 cell">
+                            <div class="callout results">
+                                <h4>Other Search Results</h4>
+                                    <!-- otherResults are generated here through main.js -->
+                                    <p id="otherResults"></p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
