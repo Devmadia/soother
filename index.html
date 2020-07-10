@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=roboto">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/foundation.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -23,9 +22,9 @@
       </div>
       <!--Quote Generating Jumbotron-->
       <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
+        <div class="large-12 cell" id="cell">
           <div class="callout quote-bckg">
-            <h3 class="quote">"Emerged into consciousness ... a mote of dust suspended in a sunbeam and billions upon billions upon billions upon billions upon billions upon billions upon billions." </h3>
+            <h3 class="quote" id="quote"><h3 class="quote" id="author"></h3></h3>
           </div>
         </div>
       </div>
@@ -49,7 +48,7 @@
             <!-- do not remove form from this or the input will stop working -->
             <form id="" class=""><label></label>
               <input name="searchitem" id="searchField" class="search-form later-results" type="text" placeholder="Press <ENTER> to search." autofocus="true" />
-              </form> <!-- button needs re-alignment to side of input field -->
+              </form>
           </div>
         </div>
         <!--Search Result Cards-->
@@ -86,6 +85,6 @@
       ></script>
       <script src="./assets/js/config.js"></script>
       <script src="./assets/js/main.js"></script>
+      <script src="./assets/js/hero.js"></script>
 </body>
 </html>
-<!--TEST-->
