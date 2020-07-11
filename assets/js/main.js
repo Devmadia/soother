@@ -5,7 +5,8 @@ var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
 var articleCounter = 0;
 var picCounter = 0;
-var savedArt = [];
+var buttonCounter = 0;
+var storedArticle = [];
 
 
 // search field input function
@@ -103,17 +104,19 @@ function makeCard(articles, noImgArt) {
         var titleOne = articles[i].headline;
         
         // opens target link in new window to avoid copyright issues
-        var titleLink = $("<a>").attr("target", "_blank");
+        var titleLink = $("<a>").attr("target", "_blank").attr("data-art-id", articleCounter).addClass("title");
 
         // retrieves titleLinkfrom the variable, thus remains set to [0]
         titleLink[0].href=articles[i].url;
         titleLink.html(titleOne);
         var newsImageOne = articles[i].image;
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
-        var insertImage = $("<p>").attr('id', 'image').attr("save-pic-id",picCounter);
-        var insertTitle = $("<p>").attr('id', 'title').attr("save-art-id",articleCounter);
+        var insertImage = $("<p>").attr('id', 'image').attr("data-pic-id",picCounter);
+        var insertTitle = $("<p>").attr('id', 'title').attr("data-art-id",articleCounter);
 
-        var saveBtn = $("<img>").attr("src", "https://loading.io/s/asset/thumb/389824.png").addClass("save");
+        var saveBtn = $("<button>").html("Read Later").addClass("button save-btn").attr('id', 'saveArt').attr("data-btn-id",buttonCounter);
+        // test saveBtn
+        $(saveBtn).on("click", getArticle);
 
         var innerBox = $("<div>").addClass("primary-callout callout results");
         var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
@@ -125,19 +128,11 @@ function makeCard(articles, noImgArt) {
         $("#newsResults").append(outerBox);
         articleCounter++;
         picCounter++;
+        buttonCounter++;
+
     }
 
-    // change save button on-click
 
-    $(function() {
-        $(".save").on("click", function() {
-            $(this).attr("src", "https://loading.io/s/asset/thumb/389822.png");
-            //localStorage.setItem();
-            console.log(articleCounter);
-        });
-    });  
-
-    
     
     /* notification on page within element for when no articles are returned without images */
     if (noImgArt.length == 0) {
@@ -165,6 +160,43 @@ function makeCard(articles, noImgArt) {
         }
     }
 }
+
+// get article on button click
+function getArticle(event) {
+    console.log(event.target);
+    var artId = $(this).attr("data-btn-id");
+    console.log(artId);
+
+
+    //select matching article title
+    var savedArticle = $(".title[data-art-id='" + artId + "']");
+    console.log(savedArticle);
+
+    var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", artId);
+    // create delete button
+    var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
+    saveBox.append(savedArticle + " " + artId + " ", removeBtn);
+    $("#savedArticles").append(saveBox);
+    $(removeBtn).on("click", deleteArticle);
+
+    //var artSelected = document.querySelector("#title[data-art-id='" + artId + "']");
+    //console.log(artSelected);
+
+}
+
+function saveArticle() {
+    localStorage.setItem("storedArticle", JSON.stringify(storedArticle));
+}
+
+function deleteArticle(){
+    console.log(event.target);
+    console.log("the delete button was pressed");
+    var artId = $(this).attr("data-art-id");
+    console.log(artId);
+    var artSelected = $(".callout[data-art-id='" + artId + "']");
+    artSelected.remove();
+}
+
 
 // // save searched terms to local storage for retrieval
 // function saveLocalCopy(news) {
