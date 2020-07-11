@@ -18,27 +18,68 @@ html {
 body {
     margin: 0; }
 
-.soother-title {
-font-family: Roboto;
-color: #03A688;
+.quote {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 24px; 
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
 }
 
-/*.hello {
-    position: absolute;
-    left: 122px;
+.soother-title {
     font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
     color: #03A688;
-}*/
+    text-align: left;
+    display: inline; 
+}
+
+.reader {
+    width: 56px;
+    height: 56px;
+    padding-left: 0.8rem;
+    padding-bottom: 1.3rem;
+    display: inline;
+}
+
+.hello {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    color: #03A688;
+    text-align: right;
+    padding-top: 2rem;
+    line-height: 1.4;
+}
+
+.soother-title {
+    font-family: Roboto;
+    color: #03A688;
+    text-align: left;
+    display: inline; 
+}
+.reader {
+    width: 56px;
+    height: 56px;
+    padding-left: 0.8rem;
+    padding-bottom: 1.3rem;
+    display: inline;
+}
+.hello {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    color: #03A688;
+    text-align: right;
+    padding-top: 2rem;
+    line-height: 1.4;
+}
 
 .img-reader {
     position: absolute;
     width: 67px;
-    height: 80px;
-    background: url(.png), #FFFFFF;
+    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+    border-radius: 21px;	border-radius: 21px;
 }
 
 .quote-bckg {
@@ -46,21 +87,56 @@ color: #03A688;
     border-radius: 21px;
 }
 
-/*h3,
-h5 {
-    color: var(--white);
-    font-family: Roboto, serif;
-}*/
+/*#peach {
+    background: linear-gradient(256.48deg, #F26457 30.41%, #F2913D 77.97%);
+}
+
+#ocean {
+    background: blue;
+}
+*/
+.sky {
+    background: yellow;
+}
+
+.results {
+    border-radius: 21px;
+
+.search-form {
+    background-image: url("magnifying_glass.png");
+    /*background-position: 0.625rem 0.625rem;*/
+    background-position: center left;
+    border-radius: 21px;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
+    padding: 1.2rem;
+} 
+
+.outer-results {
+    border-radius: 21px;
+    background: #03A688;
+}
 
 .results {
     border-radius: 21px;
 }
 
-.btn {
-
+.read {
+    color: #0FA697;
+    font-size: 36px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 1rem;
 }
 
-.btn:hover {
+.later-results {
+    border-radius: 21px;
+    border-color: #03A688;
+}
+/* .btn {
 
 }
 
@@ -70,17 +146,41 @@ mix-blend-mode: normal;
 border-radius: 21px;
 }
 
+*/
+
+/* color transitions 
+.callout.quote-bckg:active {
+    background-color: red;
+}
+
+.red {
+    background-color: green;
+}
+
+.quote-bckg:hover {
+    background-color: green;
+}
+
+#cell{
+    transition-property: background-color;
+    background:red;
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+}
+#cell.clicked{
+    background:blue;}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {}
+.btn:hover {
 
-/* Medium and up */
-@media screen and (min-width: 40em) {}
+} */
 
-/* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+.later-results {
+    border-radius: 21px;
+    border-color: #03A688;
+}
 
-/* Large and up */
-@media screen and (min-width: 64em) {}
 
-/* Large only */
-@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
