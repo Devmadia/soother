@@ -3,6 +3,9 @@ var searchList = []; // array to save article titles that persist on refresh bas
 
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
+// variable for article save button icon
+
+
 // search field input function
 $("#searchField").keypress("click", function(e) {
 
@@ -106,14 +109,28 @@ function makeCard(articles, noImgArt) {
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
         var insertImage = $("<p>").attr('id', 'image');
         var insertTitle = $("<p>").attr('id', 'title');
+
+        var saveBtn = $("<img>").attr("src", "https://loading.io/s/asset/thumb/389824.png").addClass("save");
+        // change save button on-click
+        $(function() {
+            $(".save").on("click", function() {
+                $(this).attr("src", "https://loading.io/s/asset/thumb/389822.png");                
+            });
+        });
+    
+
         var innerBox = $("<div>").addClass("primary-callout callout results");
         var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
         insertTitle.append(titleLink);
         insertImage.append(image);
-        innerBox.append(insertImage, insertTitle);
+        innerBox.append(insertImage, insertTitle, saveBtn);
         outerBox.append(innerBox);
         $("#newsResults").append(outerBox);
     }
+
+    
+
+    
     
     /* notification on page within element for when no articles are returned without images */
     if (noImgArt.length == 0) {

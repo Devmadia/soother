@@ -117,6 +117,13 @@ border-radius: 21px;
     border-radius: 21px;
     border-color: #03A688;
 }
+
+.save {
+    margin: none;
+    padding: none;
+    cursor: pointer;
+}
+
 /* .btn {
 
 }

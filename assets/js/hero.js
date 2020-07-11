@@ -17,7 +17,7 @@ $.getJSON(html, getQuote, 'jsonp');
 // Pull new quote into hero every 5 minutes
 var newQuote = setInterval(function() {
     $.getJSON(html, getQuote, 'jsonp');
-}, 30000);
+}, 300000);
 
 // Pull new quote on-click
 $('#cell').on("click", function() {
