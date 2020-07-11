@@ -3,7 +3,9 @@ var searchList = []; // array to save article titles that persist on refresh bas
 
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
-// variable for article save button icon
+var articleCounter = 0;
+var picCounter = 0;
+var savedArt = [];
 
 
 // search field input function
@@ -86,6 +88,7 @@ function getNews(searchTerm) {
 /* "makeCard(articles, noImgArt):" passes (articles, noImgArt) from the getNews 
 articles array to the function below */ 
 
+
 function makeCard(articles, noImgArt) {
 
     /* clears contents of divs with article data rendered */  
@@ -107,28 +110,32 @@ function makeCard(articles, noImgArt) {
         titleLink.html(titleOne);
         var newsImageOne = articles[i].image;
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
-        var insertImage = $("<p>").attr('id', 'image');
-        var insertTitle = $("<p>").attr('id', 'title');
+        var insertImage = $("<p>").attr('id', 'image').attr("save-pic-id",picCounter);
+        var insertTitle = $("<p>").attr('id', 'title').attr("save-art-id",articleCounter);
 
         var saveBtn = $("<img>").attr("src", "https://loading.io/s/asset/thumb/389824.png").addClass("save");
-        // change save button on-click
-        $(function() {
-            $(".save").on("click", function() {
-                $(this).attr("src", "https://loading.io/s/asset/thumb/389822.png");                
-            });
-        });
-    
 
         var innerBox = $("<div>").addClass("primary-callout callout results");
         var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
         insertTitle.append(titleLink);
         insertImage.append(image);
         innerBox.append(insertImage, insertTitle, saveBtn);
+        console.log(articles[i].id);
         outerBox.append(innerBox);
         $("#newsResults").append(outerBox);
+        articleCounter++;
+        picCounter++;
     }
 
-    
+    // change save button on-click
+
+    $(function() {
+        $(".save").on("click", function() {
+            $(this).attr("src", "https://loading.io/s/asset/thumb/389822.png");
+            //localStorage.setItem();
+            console.log(articleCounter);
+        });
+    });  
 
     
     
