@@ -77,6 +77,8 @@ body {
     border-radius: 21px;	border-radius: 21px;
 }
 
+/* change quote background colors */
+
 .quote-bckg {
 background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
 border-radius: 21px;

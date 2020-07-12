@@ -24,6 +24,8 @@ $('#cell').on("click", function() {
     $.getJSON(html, getQuote, 'jsonp');
 });
 
+// Change background color on-click
+
 var colors = [
     'start',
     'peach',
