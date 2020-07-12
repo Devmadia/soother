@@ -3,9 +3,10 @@ var searchList = []; // array to save article titles that persist on refresh bas
 
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
-var articleCounter = 0;
+var articleCounter = parseInt(localStorage.getItem("articleCounter")) || 0;
+console.log(articleCounter);
 var picCounter = 0;
-var buttonCounter = 0;
+//var buttonCounter = 0;
 var storedArticles = [];
 
 
@@ -102,6 +103,8 @@ function makeCard(articles, noImgArt) {
 
     /* retrieves articles array information */ 
     for (var i = 0; i < articles.length; i++) {
+        articleCounter++;
+        localStorage.setItem("articleCounter", articleCounter);
                     
         // generates information for first article element
         var titleOne = articles[i].headline;
@@ -117,7 +120,7 @@ function makeCard(articles, noImgArt) {
         var insertImage = $("<p>").attr('id', 'image').attr("data-pic-id", picCounter);
         var insertTitle = $("<p>").attr('id', 'title').attr("data-art-id", articleCounter);
 
-        var saveBtn = $("<button>").html("Read Later").addClass("button save-btn").attr('id', 'saveArt').attr("data-btn-id", buttonCounter);
+        var saveBtn = $("<button>").html("Read Later").addClass("button save-btn").attr('id', 'saveArt').attr("data-art-id", articleCounter);
         // test saveBtn
         $(saveBtn).on("click", getArticle);
 
@@ -129,9 +132,9 @@ function makeCard(articles, noImgArt) {
         console.log(articles[i].id);
         outerBox.append(innerBox);
         $("#newsResults").append(outerBox);
-        articleCounter++;
-        picCounter++;
-        buttonCounter++;
+        
+        //picCounter++;
+        //buttonCounter++;
     }
     
     /* notification on page within element for when no articles are returned without images */
@@ -162,30 +165,30 @@ function makeCard(articles, noImgArt) {
 }
 
 // get article on button click
-function getArticle(articles) {
+function getArticle() {
     // get id for selected article
-    var artId = $(this).attr("data-btn-id");
-    
+    var artId = $(this).attr("data-art-id");
+    console.log(artId);
     // get matching article link
     var savedArticle = $(".title[data-art-id='" + artId + "']");
+    console.log(savedArticle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
 
     // set hyperlink to article title
-    var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
+    // var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
     var getTitle = savedArticle.html();
     console.log(getTitle);
     
-    
-    // create containers to append saved articles in sidebar
-    var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
+    // // create containers to append saved articles in sidebar
+    // var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
 
-    // create delete button to remove articles from sidebar
-    var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
+    // // create delete button to remove articles from sidebar
+    // var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
     
-    // append variables to sidebar
-    saveBox.append(getFavTitle, removeBtn);
-    $("#savedArticles").append(saveBox);
+    // // append variables to sidebar
+    // saveBox.append(getFavTitle, removeBtn);
+    // $("#savedArticles").append(saveBox);
     
     // create an object to save to storedArticles array
     var articleDataObj = {
@@ -194,10 +197,28 @@ function getArticle(articles) {
     };
     // push id to object and array
     articleDataObj.id = artId;
+    console.log(articleDataObj);
     storedArticles.push(articleDataObj);
 
     saveArticles();
-    
+    createFavCard(articleDataObj);
+    // // call deleteArticle function when remove button is clicked
+    // $(removeBtn).on("click", deleteArticle);
+}
+
+function createFavCard(article) {
+
+    var getFavTitle = $("<a>").attr("href", article.url).text(article.title);
+    // create containers to append saved articles in sidebar
+    var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", article.id);
+
+    // create delete button to remove articles from sidebar
+    var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", article.id);
+
+    // append variables to sidebar
+    saveBox.append(getFavTitle, removeBtn);
+    $("#savedArticles").append(saveBox);
+
     // call deleteArticle function when remove button is clicked
     $(removeBtn).on("click", deleteArticle);
 }
@@ -208,31 +229,32 @@ function saveArticles() {
 }
 
 function loadArticles() {
-    var savedArticles = localStorage.getItem("storedArticles");
+    storedArticles = localStorage.getItem("storedArticles") || [];
 
-    if(!storedArticles) {
+    if(storedArticles.length <= 0) {
         return false;
     }
 
-    savedArticles = JSON.parse(savedArticles);
+    storedArticles = JSON.parse(storedArticles);
 
-    // for (var i = 0; i < savedArticles.length; i++) {
-    //     getArticle(savedArticles[i]);
-    // }
+    for (var i = 0; i < storedArticles.length; i++) {
+        createFavCard(storedArticles[i]);
+    }
 
 }
 
 function deleteArticle(){
     // get id of delete button selected
     var artId = $(this).attr("data-art-id");
-
+    console.log(artId);
     // get matching article and remove from sidebar
     var artSelected = $(".callout[data-art-id='" + artId + "']");
     artSelected.remove();
 
     // use for loop to remove element from array
     for (var i = 0; i < storedArticles.length; i++) {
-        if (storedArticles[i].id !== parseInt(artId)) {
+        console.log(storedArticles[i].id);
+        if (storedArticles[i].id == parseInt(artId)) {
             storedArticles.splice(i, 1);
             break;
         }
