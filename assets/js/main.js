@@ -218,7 +218,7 @@ function deleteArticle(){
 // creating the searched terms' list
 function addArticle(news) {
     // introduces a list item element
-    var listArticle = $("<li>").addClass("list-group-item list-group-item-action").text(news);  //need to define 
+    var listArticle = $("<li>").addClass("list-group-item list-group-item-action searchedlist").text(news);  //need to define 
     var clearTerms = $("<button>").html("Clear All").addClass("button remove-btn").attr("id", "clear");
     // adds the searched term to the ul with a class of searched-articles
     $("#searched-articles").append(listArticle);
