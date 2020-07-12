@@ -9,7 +9,7 @@ var getQuote=function(data){
   }
  
   $('#quote').text(data.quoteText);
-  $('#author').text(data.quoteAuthor);
+  $('#author').text('-' + ' ' + data.quoteAuthor);
 };
 // Call random quote
 $.getJSON(html, getQuote, 'jsonp');
@@ -17,14 +17,28 @@ $.getJSON(html, getQuote, 'jsonp');
 // Pull new quote into hero every 5 minutes
 var newQuote = setInterval(function() {
     $.getJSON(html, getQuote, 'jsonp');
-}, 30000);
+}, 300000);
 
 // Pull new quote on-click
 $('#cell').on("click", function() {
     $.getJSON(html, getQuote, 'jsonp');
 });
 
-function bgcolor(id) {
-    document.body.style.backgroundColor =
-    document.getElementById(id).innerHTML;
-}
+var colors = [
+    'start',
+    'peach',
+    'sky',
+    'sea',
+];
+var currentColor = 0;
+
+var cell = jQuery('#cell');
+
+cell.click(function (evt) {
+    // remove the old class before incrementing
+    cell.removeClass(colors[currentColor]);
+    currentColor += 1;
+    currentColor %= colors.length;
+    // add the new class
+    cell.addClass(colors[currentColor]);
+});

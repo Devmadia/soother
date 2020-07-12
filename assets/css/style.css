@@ -1,4 +1,3 @@
-
 foundation-palette {
     --primary: #F26457;
     --secondary: #03A688;
@@ -6,9 +5,6 @@ foundation-palette {
     --purple: #595FD9;
     --orange: #F2913D;
     --white: #f2f2f2;
-}
-* {
-    font-family: Roboto;
 }
 
 html {
@@ -78,29 +74,34 @@ body {
 .img-reader {
     position: absolute;
     width: 67px;
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
     border-radius: 21px;	border-radius: 21px;
 }
 
 .quote-bckg {
-    background: linear-gradient(256.48deg, #F26457 30.41%, #F2913D 77.97%);
-    border-radius: 21px;
+background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
+border-radius: 21px;
+opacity: 0.8;
 }
 
-/*#peach {
-    background: linear-gradient(256.48deg, #F26457 30.41%, #F2913D 77.97%);
+.start {
+    background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
+    opacity: 0.8;
 }
 
-#ocean {
-    background: blue;
-}
-*/
 .sky {
-    background: yellow;
+    background: linear-gradient(98deg, #F28177 30%,#F2913D 70%);
+    opacity: 0.8;
 }
 
-.results {
-    border-radius: 21px;
+.sea {
+    background: linear-gradient(138deg, #03A688 41%, #595FD9 59%);
+    opacity: 0.8;
+}
+
+.peach {
+    background: linear-gradient(98deg,#F2913D 33%,#03A688 70%);
+    opacity: 0.8;
+}
 
 .search-form {
     background-image: url("magnifying_glass.png");
@@ -115,7 +116,8 @@ body {
 
 .outer-results {
     border-radius: 21px;
-    background: #03A688;
+    background: linear-gradient(98deg, #595FD9 32.37%, #03A688 56.12%);
+    opacity: 0.8;
 }
 
 .results {
@@ -137,44 +139,8 @@ body {
     border-color: #03A688;
 }
 /* .btn {
-
 }
-
-.search-results {
-    background: linear-gradient(180deg, rgba(3, 166, 136, 0.8) 0%, rgba(89, 95, 217, 0.8) 100%);
-mix-blend-mode: normal;
-border-radius: 21px;
-}
-
-*/
-
-/* color transitions 
-.callout.quote-bckg:active {
-    background-color: red;
-}
-
-.red {
-    background-color: green;
-}
-
-.quote-bckg:hover {
-    background-color: green;
-}
-
-#cell{
-    transition-property: background-color;
-    background:red;
-    transition:0.5s ease;
-    -moz-transition:0.5s ease;
-    -webkit-transition:0.5s ease;
-}
-#cell.clicked{
-    background:blue;}
-
-/* Small only */
-@media screen and (max-width: 39.9375em) {}
 .btn:hover {
-
 } */
 
 .later-results {
@@ -182,5 +148,7 @@ border-radius: 21px;
     border-color: #03A688;
 }
 
-
-
+.newspaper {
+    position: absolute;
+    opacity: 0.2;
+}
