@@ -158,9 +158,9 @@ function makeCard(articles, noImgArt) {
 
 // get article on button click
 function getArticle(articles) {
-    console.log(articles.target);
+    //console.log(articles.target);
     var artId = $(this).attr("data-btn-id");
-    console.log(artId);
+    //console.log(artId);
 
     //select matching article title
     var savedArticle = $(".title[data-art-id='" + artId + "']");
@@ -169,12 +169,15 @@ function getArticle(articles) {
     console.log(getTitle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
+    //var savedTitle = $("<a>").attr("src", getLink).attr("data-art-id", artId);
 
-    var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", artId);
+
+    var saveBox = $("<div>").attr('id', 'saveLink').html(getTitle).attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
+    //var attachLink = $("#saveLink").attr("src", getLink);
 
     // create delete button
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
-    saveBox.append(getTitle, getLink, removeBtn);
+    saveBox.append(getTitle + " ", removeBtn);
     $("#savedArticles").append(saveBox);
     $(removeBtn).on("click", deleteArticle);
 
