@@ -121,7 +121,7 @@ function makeCard(articles, noImgArt) {
         // test saveBtn
         $(saveBtn).on("click", getArticle);
 
-        var innerBox = $("<div>").addClass("primary-callout callout results card-size  grid-x grid-margin-x");
+        var innerBox = $("<div>").addClass("primary-callout callout results card-size grid-x grid-margin-x");
         var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
         insertTitle.append(titleLink);
         insertImage.append(image);
@@ -163,24 +163,6 @@ function makeCard(articles, noImgArt) {
 
 // get article on button click
 function getArticle(articles) {
-<<<<<<< Updated upstream
-    // get id for selected article
-    var artId = $(this).attr("data-btn-id");
-    
-    // get matching article link
-    var savedArticle = $(".title[data-art-id='" + artId + "']");
-    var getLink = $(savedArticle).attr('href');
-    console.log(getLink);
-
-    // set hyperlink to article title
-    var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
-    var getTitle = savedArticle.html();
-    console.log(getTitle);
-    
-    
-    // create containers to append saved articles in sidebar
-    var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
-=======
     //console.log(articles);
     var artId = $(this).attr("data-btn-id");
     // console.log(artId);
@@ -204,19 +186,12 @@ function getArticle(articles) {
     
 
     // .attr("src", getLink)
->>>>>>> Stashed changes
 
     // create delete button to remove articles from sidebar
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
-<<<<<<< Updated upstream
-    
-    // append variables to sidebar
-    saveBox.append(getFavTitle, removeBtn);
-=======
 
     // append
     saveBox.append(getTitle + " ", removeBtn);
->>>>>>> Stashed changes
     $("#savedArticles").append(saveBox);
     
     // create an object to save to storedArticles array
@@ -236,37 +211,13 @@ function getArticle(articles) {
 
 function saveArticles() {
     localStorage.setItem("storedArticles", JSON.stringify(storedArticles));
-<<<<<<< Updated upstream
-    // console.log("The current array is: ", storedArticles);
-}
-
-function loadArticles() {
-    var savedArticles = localStorage.getItem("storedArticles");
-
-    if(!storedArticles) {
-        return false;
-    }
-
-    savedArticles = JSON.parse(savedArticles);
-
-    // for (var i = 0; i < savedArticles.length; i++) {
-    //     getArticle(savedArticles[i]);
-    // }
-
-=======
     //console.log(storedArticles);
->>>>>>> Stashed changes
 }
 
 function deleteArticle(){
     // get id of delete button selected
     var artId = $(this).attr("data-art-id");
-<<<<<<< Updated upstream
-
-    // get matching article and remove from sidebar
-=======
     //console.log(artId);
->>>>>>> Stashed changes
     var artSelected = $(".callout[data-art-id='" + artId + "']");
     artSelected.remove();
 
