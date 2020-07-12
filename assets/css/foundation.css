@@ -995,10 +995,11 @@ select {
     margin-right: 0;
     margin-left: 0; }
   .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
-    background-color: #2ba6cb;
-    color: #fefefe; }
+    background-color: #03A688;
+    color: #fefefe; 
+    border-radius: 8px;}
   .button:hover, .button:focus {
-    background-color: #258dad;
+    background-color: #F2913D;
     color: #fefefe; }
   .button.primary, .button.primary.disabled, .button.primary[disabled], .button.primary.disabled:hover, .button.primary[disabled]:hover, .button.primary.disabled:focus, .button.primary[disabled]:focus {
     background-color: #2ba6cb;

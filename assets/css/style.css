@@ -1,8 +1,9 @@
 foundation-palette {
     --primary: #F26457;
-    --secondary: #497980;
-    --tertiary:#D9B19A;
+    --secondary: #03A688;
+    --tertiary:#F28177;
     --purple: #595FD9;
+    --orange: #F2913D;
     --white: #f2f2f2;
 }
 
@@ -21,7 +22,7 @@ body {
     font-size: 24px; 
     align-items: center;
     text-align: center;
-    padding: 0rem;
+    padding: 2rem;
 }
 
 .soother-title {
@@ -73,29 +74,52 @@ body {
 .img-reader {
     position: absolute;
     width: 67px;
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
     border-radius: 21px;	border-radius: 21px;
 }
 
+/* change quote background colors */
+
 .quote-bckg {
-background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
 border-radius: 21px;
+opacity: 0.8;
+}
+
+.start {
+    background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
+    opacity: 0.8;
+}
+
+.sky {
+    background: linear-gradient(98deg, #F28177 30%,#F2913D 70%);
+    opacity: 0.8;
+}
+
+.sea {
+    background: linear-gradient(138deg, #03A688 41%, #595FD9 59%);
+    opacity: 0.8;
+}
+
+.peach {
+    background: linear-gradient(98deg,#F2913D 33%,#03A688 70%);
+    opacity: 0.8;
 }
 
 .search-form {
     background-image: url("magnifying_glass.png");
     /*background-position: 0.625rem 0.625rem;*/
-    background-position: center right;
+    background-position: center left;
     border-radius: 21px;
     background-repeat: no-repeat;
     background-size: 1rem;
     /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
-    /* padding: 1.2rem; */
+    padding: 1.2rem;
 } 
 
 .outer-results {
     border-radius: 21px;
-    background: #03A688;
+    background: linear-gradient(98deg, #595FD9 32.37%, #03A688 56.12%);
+    opacity: 0.8;
 }
 
 .results {
@@ -112,47 +136,21 @@ border-radius: 21px;
     padding-bottom: 1rem;
 }
 
-.searchterms {
-    color: #0FA697;
-    font-size: 20px;
-    line-height: 5px;
-    align-items: center;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* padding-bottom: 1rem; */
+.later-results {
+    border-radius: 21px;
+    border-color: #03A688;
 }
-
-.searchedlist {
-    color: #0FA697;
-    font-size: 20px;
-    line-height: 25px;
+/* .btn {
 }
+.btn:hover {
+} */
 
 .later-results {
     border-radius: 21px;
     border-color: #03A688;
 }
 
-#saveLink {
-    color: #0FA697;
-    font-size: 20px;
-    line-height: 25px;
+.newspaper {
+    position: absolute;
+    opacity: 0.2;
 }
-
-.save {
-    margin: none;
-    padding: none;
-    cursor: pointer;
-}
-
-#newsResults {
-    margin: 1px;
-}
-
-.later-results {
-    border-radius: 21px;
-    border-color: #03A688;
-}
-
-
-
