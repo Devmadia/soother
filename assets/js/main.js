@@ -201,20 +201,40 @@ function getArticle(articles) {
 
 function saveArticles() {
     localStorage.setItem("storedArticles", JSON.stringify(storedArticles));
-    console.log(storedArticles);
+    console.log("The current array is: ", storedArticles);
 }
 
 function loadArticles() {
+    var storedArticles = localStorage.getItem('storedArticles');
+    storedArticles = JSON.parse(storedArticles);
 
+    if(!storedArticles) {
+        return false;
+    }
+
+    // for(var i=0; i <storedArticles.length; i++) {
+    //     addArticles(storedArticles[i]);
+    // }
 }
 
 function deleteArticle(){
-    console.log(event.target);
-    console.log("the delete button was pressed");
+    // get id of delete button selected
     var artId = $(this).attr("data-art-id");
-    console.log(artId);
+
+    // get matching article and remove from sidebar
     var artSelected = $(".callout[data-art-id='" + artId + "']");
     artSelected.remove();
+
+    // use for loop to remove element from array
+    for (var i = 0; i < storedArticles.length; i++) {
+        if (storedArticles[i].id !== parseInt(artId)) {
+            storedArticles.splice(i, 1);
+            break;
+        }
+    }
+    
+    // save changes to local storage
+    saveArticles();
 }
 
 // creating the searched terms' list
@@ -257,3 +277,5 @@ function loadArticle() {
 }
 
 loadArticle()
+
+loadArticles();
