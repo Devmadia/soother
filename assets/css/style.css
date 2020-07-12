@@ -1,4 +1,3 @@
-
 foundation-palette {
     --primary: #F26457;
     --secondary: #497980;
@@ -22,7 +21,7 @@ body {
     font-size: 24px; 
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 0rem;
 }
 
 .soother-title {
@@ -86,12 +85,12 @@ border-radius: 21px;
 .search-form {
     background-image: url("magnifying_glass.png");
     /*background-position: 0.625rem 0.625rem;*/
-    background-position: center left;
+    background-position: center right;
     border-radius: 21px;
     background-repeat: no-repeat;
     background-size: 1rem;
     /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
-    padding: 1.2rem;
+    /* padding: 1.2rem; */
 } 
 
 .outer-results {
@@ -113,17 +112,42 @@ border-radius: 21px;
     padding-bottom: 1rem;
 }
 
+.searchterms {
+    color: #0FA697;
+    font-size: 20px;
+    line-height: 5px;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* padding-bottom: 1rem; */
+}
+
+.searchedlist {
+    color: #0FA697;
+    font-size: 20px;
+    line-height: 25px;
+}
+
 .later-results {
     border-radius: 21px;
     border-color: #03A688;
 }
-/* .btn {
 
+#saveLink {
+    color: #0FA697;
+    font-size: 20px;
+    line-height: 25px;
 }
 
-.btn:hover {
+.save {
+    margin: none;
+    padding: none;
+    cursor: pointer;
+}
 
-} */
+#newsResults {
+    margin: 1px;
+}
 
 .later-results {
     border-radius: 21px;
