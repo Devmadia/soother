@@ -88,8 +88,6 @@ function getNews(searchTerm) {
 
 /* "makeCard(articles, noImgArt):" passes (articles, noImgArt) from the getNews 
 articles array to the function below */ 
-
-
 function makeCard(articles, noImgArt) {
 
     /* clears contents of divs with article data rendered */  
@@ -97,7 +95,6 @@ function makeCard(articles, noImgArt) {
     $("#otherResults").empty();
 
     /* retrieves articles array information */ 
-
     for (var i = 0; i < articles.length; i++) {
                     
         // generates information for first article element
@@ -111,10 +108,10 @@ function makeCard(articles, noImgArt) {
         titleLink.html(titleOne);
         var newsImageOne = articles[i].image;
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
-        var insertImage = $("<p>").attr('id', 'image').attr("data-pic-id",picCounter);
-        var insertTitle = $("<p>").attr('id', 'title').attr("data-art-id",articleCounter);
+        var insertImage = $("<p>").attr('id', 'image').attr("data-pic-id", picCounter);
+        var insertTitle = $("<p>").attr('id', 'title').attr("data-art-id", articleCounter);
 
-        var saveBtn = $("<button>").html("Read Later").addClass("button save-btn").attr('id', 'saveArt').attr("data-btn-id",buttonCounter);
+        var saveBtn = $("<button>").html("Read Later").addClass("button save-btn").attr('id', 'saveArt').attr("data-btn-id", buttonCounter);
         // test saveBtn
         $(saveBtn).on("click", getArticle);
 
@@ -129,10 +126,7 @@ function makeCard(articles, noImgArt) {
         articleCounter++;
         picCounter++;
         buttonCounter++;
-
     }
-
-
     
     /* notification on page within element for when no articles are returned without images */
     if (noImgArt.length == 0) {
@@ -162,17 +156,17 @@ function makeCard(articles, noImgArt) {
 }
 
 // get article on button click
-function getArticle(event) {
-    console.log(event.target);
+function getArticle(articles) {
+    console.log(articles.target);
     var artId = $(this).attr("data-btn-id");
     console.log(artId);
-
 
     //select matching article title
     var savedArticle = $(".title[data-art-id='" + artId + "']");
     console.log(savedArticle);
 
     var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", artId);
+
     // create delete button
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
     saveBox.append(savedArticle + " " + artId + " ", removeBtn);
