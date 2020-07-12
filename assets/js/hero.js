@@ -9,7 +9,7 @@ var getQuote=function(data){
   }
  
   $('#quote').text(data.quoteText);
-  $('#author').text(data.quoteAuthor);
+  $('#author').text('-' + ' ' + data.quoteAuthor);
 };
 // Call random quote
 $.getJSON(html, getQuote, 'jsonp');
