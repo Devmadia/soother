@@ -20,9 +20,10 @@ $("#searchField").keypress("click", function(e) {
         var searchTerm = $("#searchField").val();
 
         // when user does not enter or pick a search term
-        if (searchTerm === '') { 
-            alert("You must enter a search term!");
-        }
+        // possible modal
+        // if (searchTerm === '') { 
+        //     alert("You must enter a search term!");
+        // }
 
         // clears the field after user successfully enters a search term
         $("#searchField").val(""); 
@@ -171,11 +172,15 @@ function getArticle(event) {
     //select matching article title
     var savedArticle = $(".title[data-art-id='" + artId + "']");
     console.log(savedArticle);
+    var getTitle = savedArticle.html();
+    console.log(getTitle);
+    var getLink = $(savedArticle).attr('href');
+    console.log(getLink);
 
     var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", artId);
     // create delete button
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
-    saveBox.append(savedArticle + " " + artId + " ", removeBtn);
+    saveBox.append(getTitle, getLink, removeBtn);
     $("#savedArticles").append(saveBox);
     $(removeBtn).on("click", deleteArticle);
 
