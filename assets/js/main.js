@@ -172,7 +172,7 @@ function getArticle(articles) {
     //var savedTitle = $("<a>").attr("src", getLink).attr("data-art-id", artId);
 
 
-    var saveBox = $("<div>").attr('id', 'saveLink').html(getTitle).attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
+    var saveBox = $("<div>").attr('id', 'saveLink').attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
     //var attachLink = $("#saveLink").attr("src", getLink);
 
     // create delete button
