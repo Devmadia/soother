@@ -21,9 +21,6 @@ $("#searchField").keypress("click", function(e) {
 
         // when user does not enter or pick a search term
         // possible modal
-        // if (searchTerm === '') { 
-        //     alert("You must enter a search term!");
-        // }
 
         // clears the field after user successfully enters a search term
         $("#searchField").val(""); 
