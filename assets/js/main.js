@@ -172,7 +172,10 @@ function getArticle(articles) {
     console.log(getLink);
 
     // set hyperlink to article title
-    var getTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
+    var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
+    var getTitle = savedArticle.html();
+    console.log(getTitle);
+    
     
     // create containers to append saved articles in sidebar
     var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
@@ -181,7 +184,7 @@ function getArticle(articles) {
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
     
     // append variables to sidebar
-    saveBox.append(getTitle, removeBtn);
+    saveBox.append(getFavTitle, removeBtn);
     $("#savedArticles").append(saveBox);
     
     // create an object to save to storedArticles array
@@ -201,20 +204,22 @@ function getArticle(articles) {
 
 function saveArticles() {
     localStorage.setItem("storedArticles", JSON.stringify(storedArticles));
-    console.log("The current array is: ", storedArticles);
+    // console.log("The current array is: ", storedArticles);
 }
 
 function loadArticles() {
-    var storedArticles = localStorage.getItem('storedArticles');
-    storedArticles = JSON.parse(storedArticles);
+    var savedArticles = localStorage.getItem("storedArticles");
 
     if(!storedArticles) {
         return false;
     }
 
-    // for(var i=0; i <storedArticles.length; i++) {
-    //     addArticles(storedArticles[i]);
+    savedArticles = JSON.parse(savedArticles);
+
+    // for (var i = 0; i < savedArticles.length; i++) {
+    //     getArticle(savedArticles[i]);
     // }
+
 }
 
 function deleteArticle(){
