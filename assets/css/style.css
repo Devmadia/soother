@@ -93,6 +93,7 @@ opacity: 0.8;
 .sky {
     background: linear-gradient(98deg, #F28177 30%,#F2913D 70%);
     opacity: 0.8;
+    transition: ease-in-out;
 }
 
 .sea {
