@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/foundation.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/foundation.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>sootheR</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--Header-->
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
           <div class="large-4 columns">
-            <h1 class="soother-title">sootheR<img class="reader" src="./assets/soother.png"/></h1>
-            <h2 class="hello">hello, lovely</h2>
+            <h1 class="soother-title">
+              sootheR<img class="reader" src="./assets/soother.png" />
+            </h1>
+            <h2 class="hello">hello, lovely</h2> 
           </div>
         </div>
       </div>
@@ -24,7 +31,9 @@
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell" id="cell">
           <div class="callout quote-bckg">
-            <h3 class="quote" id="quote"><h3 class="quote" id="author"></h3></h3>
+            <h3 class="quote" id="quote">
+              <h3 class="quote" id="author"></h3>
+            </h3>
           </div>
         </div>
       </div>
@@ -34,58 +43,71 @@
         <div class="large-4 cell">
           <div class="primary-callout">
             <h5 class="read">Read Me Later</h5>
-              <div class="callout later-results">
-                <ul class="list-group" id="searched-articles" onclick="priorArticle()"><h5 class="searchterms">Searched Terms</h5></ul>
-              </div>
-              <div id="savedArticles" class="callout later-results"><h5 class="searchterms">Saved Articles</h5></div>
+            <div class="callout later-results">
+              <ul class="list-group" id="searched-articles" onclick="priorArticle()">
+                <h5 class="searchterms">Searched Terms</h5>
+              </ul>
+            </div>
+            <div id="savedArticles" class="callout later-results">
+              <h5 class="searchterms">Saved Articles</h5>
+            </div>
           </div>
         </div>
         <!--Content-->
         <div class="large-8 cell">
-        <!--Search Bar-->
-        <div class="grid-x grid-padding-x">
-          <div class="large-12 cell search later">
-            <!-- do not remove form from this or the input will stop working -->
-            <form id="" class=""><label></label>
-              <input name="searchitem" id="searchField" class="search-form later-results" type="text" placeholder="Press <ENTER> to search." autofocus="true" />
+          <!--Search Bar-->
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 cell search later">
+              <!-- do not remove <form> from this or the input will stop working -->
+              <form id="" class="">
+                <label></label>
+                <input
+                  name="searchitem"
+                  id="searchField"
+                  class="search-form later-results"
+                  type="text"
+                  placeholder="Press <ENTER> to search."
+                  autofocus="true"
+                />
               </form>
+            </div>
+          </div>
+
+          <!--Search Result Cards-->
+          <div class="large-12 cell callout outer-results">
+            <div class="grid-x grid-padding-x">
+              <!--Other Search Results-->
+              <div class="large-8 cell"></div> <!--Apparently a spacer div-->
+              <!-- newResults are generated here through main.js -->
+              <div id="newsResults" class="grid-x grid-padding-x"></div> <!--Apparently a spacer div-->
+                <div class="large-12 cell">
+                  <div class="grid-x grid-padding-x">
+                    <div class="callout results">
+                      <!-- Don't change the class on the below line and please leave 'Other' there in the header line -->
+                      <h4 class="read">Other Search Results</h4>
+                      <!-- otherResults are generated here through main.js -->
+                      <p id="otherResults"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
-        <!--Search Result Cards-->
-        <div class="large-12 cell callout outer-results ">
-          <div class="grid-x grid-padding-x">
-        <!--Other Search Results-->
-            <div class="large-8  cell"></div>
-                <!-- newResults are generated here through main.js -->
-                <div id="newsResults" class="grid-x grid-padding-x"></div>
-                    
-                        <div class ="large-12  cell">
-                          <div class="grid-x grid-padding-x">
-                            <div class="callout results">
-                                <h4 class="read">Search Results</h4>
-                                    <!-- otherResults are generated here through main.js -->
-                                    <p id="otherResults"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js"
-        integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw=="
-        crossorigin="anonymous"
-      ></script>
-      <script src="./assets/js/config.js"></script>
-      <script src="./assets/js/main.js"></script>
-      <script src="./assets/js/hero.js"></script>
-</body>
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.1/dist/js/foundation.min.js"
+      integrity="sha256-WUKHnLrIrx8dew//IpSEmPN/NT3DGAEmIePQYIEJLLs= sha384-53StQWuVbn6figscdDC3xV00aYCPEz3srBdV/QGSXw3f19og3Tq2wTRe0vJqRTEO sha512-X9O+2f1ty1rzBJOC8AXBnuNUdyJg0m8xMKmbt9I3Vu/UOWmSg5zG+dtnje4wAZrKtkopz/PEDClHZ1LXx5IeOw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/hero.js"></script>
+  </body>
 </html>
