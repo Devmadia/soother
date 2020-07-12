@@ -14,11 +14,11 @@
     <!--Header-->
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
-        <div class="large-6 cell">
-          <h1 class="soother-title">sootheR</h1><img class="reader" src="./assets/soother.png"/>
-        </div>
-        <div class="large-6 cell"> 
-          <h2 class="hello"> hello, lovely</h2>
+        <div class="large-12 cell">
+          <div class="large-4 columns">
+            <h1 class="soother-title">sootheR<img class="reader" src="./assets/soother.png"/></h1>
+            <h2 class="hello">hello lovely</h2>
+          </div>
         </div>
       </div>
       <!--Quote Generating Jumbotron-->
@@ -32,7 +32,7 @@
       <!--Sidebar/ Saved Articles-->
       <!-- localStorage elements will eventually generate here through main.js -->
       <div class="grid-x grid-padding-x">
-        <div class="large-4 medium-4 small-4 cell">
+        <div class="large-4 cell">
           <div class="primary-callout">
             <h5 class="read">Read Me Later</h5>
               <div class="callout later-results">
@@ -42,7 +42,7 @@
           </div>
         </div>
         <!--Content-->
-        <div class="large-8 medium-8 small-8 cell">
+        <div class="large-8 cell">
         <!--Search Bar-->
         <div class="grid-x grid-padding-x">
           <div class="large-12 cell search later">
@@ -56,13 +56,14 @@
         <div class="large-12 cell callout outer-results ">
           <div class="grid-x grid-padding-x">
         <!--Other Search Results-->
-            <div class="large-8 medium-8 cell"></div>
+            <div class="large-8  cell"></div>
                 <!-- newResults are generated here through main.js -->
                 <div id="newsResults" class="grid-x grid-padding-x"></div>
-                    <div class="grid-x grid-padding-x">
-                        <div class ="large-12 medium-12 small-12 cell">
+                    
+                        <div class ="large-12  cell">
+                          <div class="grid-x grid-padding-x">
                             <div class="callout results">
-                                <h4 class="read">Other Search Results</h4>
+                                <h4>Search Results</h4>
                                     <!-- otherResults are generated here through main.js -->
                                     <p id="otherResults"></p>
                             </div>
