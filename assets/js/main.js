@@ -28,10 +28,15 @@ $("#searchField").keypress("click", function(e) {
         // clears the field after user successfully enters a search term
         $("#searchField").val(""); 
 
-        // addArticle(searchTerm)
+        addArticle(searchTerm)
         getNews(searchTerm)
         }
 })
+
+// when previously searched term is clicked, bring up articles
+function priorArticle() {
+    getNews(event.target.innerText);
+}
 
 /* gathers news for user search topic and stors searched term in an array for later usage */
 function getNews(searchTerm) {
@@ -180,7 +185,6 @@ function getArticle(articles) {
 
     //var artSelected = document.querySelector("#title[data-art-id='" + artId + "']");
     //console.log(artSelected);
-
 }
 
 function saveArticle() {
@@ -196,6 +200,23 @@ function deleteArticle(){
     artSelected.remove();
 }
 
+// creating the searched terms' list
+function addArticle(news) {
+    // introduces a list item element
+    var listArticle = $("<li>").addClass("list-group-item list-group-item-action").text(news);  //need to define 
+    var clearTerms = $("<button>").html("Clear All").addClass("button remove-btn").attr("id", "clear");
+    // adds the searched term to the ul with a class of searched-articles
+    $("#searched-articles").append(listArticle);
+    saveTerms(news);
+}
+
+// save searched terms to local storage for retrieval
+function saveTerms(news) {
+    // adds new items to the end of an array and returns the new length
+    searchList.push(news);
+    // assigning saved search terms under the key 'userInput' within the array called searchList
+    localStorage.setItem('userInput', JSON.stringify(searchList));
+}
 
 // // save searched terms to local storage for retrieval
 // function saveLocalCopy(news) {
@@ -205,17 +226,17 @@ function deleteArticle(){
 //     localStorage.setItem('userInput', JSON.stringify(searchList));
 // }
 
-// function loadArticle() {
-//     var storedArticle = localStorage.getItem('userInput');
-//     storedArticle = JSON.parse(storedArticle);
+function loadArticle() {
+    var storedArticle = localStorage.getItem('userInput');
+    storedArticle = JSON.parse(storedArticle);
 
-//     if(!storedArticle) {
-//         return false;
-//     }
+    if(!storedArticle) {
+        return false;
+    }
 
-//     for(var i=0; i <storedArticle.length; i++) {
-//         addArticle(storedArticle[i]);
-//     }
-// }
+    for(var i=0; i <storedArticle.length; i++) {
+        addArticle(storedArticle[i]);
+    }
+}
 
-// loadArticle()
+loadArticle()
