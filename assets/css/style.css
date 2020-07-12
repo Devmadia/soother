@@ -86,12 +86,12 @@ border-radius: 21px;
 .search-form {
     background-image: url("magnifying_glass.png");
     /*background-position: 0.625rem 0.625rem;*/
-    background-position: center left;
+    background-position: center right;
     border-radius: 21px;
     background-repeat: no-repeat;
     background-size: 1rem;
     /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
-    padding: 1.2rem;
+    /* padding: 1.2rem; */
 } 
 
 .outer-results {
