@@ -163,35 +163,36 @@ function makeCard(articles, noImgArt) {
 
 // get article on button click
 function getArticle(articles) {
-    //console.log(articles.target);
+    // get id for selected article
     var artId = $(this).attr("data-btn-id");
-    //console.log(artId);
-
-    // select matching article title
+    
+    // get matching article link
     var savedArticle = $(".title[data-art-id='" + artId + "']");
-    console.log(savedArticle);
-    var getTitle = savedArticle.html();
-    // select matching article link
-    console.log(getTitle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
+
+    // set hyperlink to article title
+    var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
+    var getTitle = savedArticle.html();
+    console.log(getTitle);
     
-    // create container to append saved articles
-    var saveBox = $("<div>").attr('id', 'saveLink').attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
+    
+    // create containers to append saved articles in sidebar
+    var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
 
-    // create delete button
+    // create delete button to remove articles from sidebar
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
-
-    // append 
-    saveBox.append(getTitle + " ", removeBtn);
+    
+    // append variables to sidebar
+    saveBox.append(getFavTitle, removeBtn);
     $("#savedArticles").append(saveBox);
     
-    // create an object to save to array
+    // create an object to save to storedArticles array
     var articleDataObj = {
         title: getTitle,
         url: getLink,
     };
-    // push id to object
+    // push id to object and array
     articleDataObj.id = artId;
     storedArticles.push(articleDataObj);
 
@@ -203,16 +204,42 @@ function getArticle(articles) {
 
 function saveArticles() {
     localStorage.setItem("storedArticles", JSON.stringify(storedArticles));
-    console.log(storedArticles);
+    // console.log("The current array is: ", storedArticles);
+}
+
+function loadArticles() {
+    var savedArticles = localStorage.getItem("storedArticles");
+
+    if(!storedArticles) {
+        return false;
+    }
+
+    savedArticles = JSON.parse(savedArticles);
+
+    // for (var i = 0; i < savedArticles.length; i++) {
+    //     getArticle(savedArticles[i]);
+    // }
+
 }
 
 function deleteArticle(){
-    console.log(event.target);
-    console.log("the delete button was pressed");
+    // get id of delete button selected
     var artId = $(this).attr("data-art-id");
-    console.log(artId);
+
+    // get matching article and remove from sidebar
     var artSelected = $(".callout[data-art-id='" + artId + "']");
     artSelected.remove();
+
+    // use for loop to remove element from array
+    for (var i = 0; i < storedArticles.length; i++) {
+        if (storedArticles[i].id !== parseInt(artId)) {
+            storedArticles.splice(i, 1);
+            break;
+        }
+    }
+    
+    // save changes to local storage
+    saveArticles();
 }
 
 // creating the searched terms' list
@@ -255,3 +282,5 @@ function loadArticle() {
 }
 
 loadArticle()
+
+loadArticles();
