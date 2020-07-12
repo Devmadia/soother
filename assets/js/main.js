@@ -6,7 +6,7 @@ var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 var articleCounter = 0;
 var picCounter = 0;
 var buttonCounter = 0;
-var storedArticle = [];
+var storedArticles = [];
 
 
 // search field input function
@@ -167,31 +167,43 @@ function getArticle(articles) {
     var artId = $(this).attr("data-btn-id");
     //console.log(artId);
 
-    //select matching article title
+    // select matching article title
     var savedArticle = $(".title[data-art-id='" + artId + "']");
     console.log(savedArticle);
     var getTitle = savedArticle.html();
+    // select matching article link
     console.log(getTitle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
-    //var savedTitle = $("<a>").attr("src", getLink).attr("data-art-id", artId);
-
-
+    
+    // create container to append saved articles
     var saveBox = $("<div>").attr('id', 'saveLink').attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
-    //var attachLink = $("#saveLink").attr("src", getLink);
 
     // create delete button
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
+
+    // append 
     saveBox.append(getTitle + " ", removeBtn);
     $("#savedArticles").append(saveBox);
-    $(removeBtn).on("click", deleteArticle);
+    
+    // create an object to save to array
+    var articleDataObj = {
+        title: getTitle,
+        url: getLink,
+    };
+    // push id to object
+    articleDataObj.id = artId;
+    storedArticles.push(articleDataObj);
 
-    //var artSelected = document.querySelector("#title[data-art-id='" + artId + "']");
-    //console.log(artSelected);
+    saveArticles();
+    
+    // call deleteArticle function when remove button is clicked
+    $(removeBtn).on("click", deleteArticle);
 }
 
-function saveArticle() {
-    localStorage.setItem("storedArticle", JSON.stringify(storedArticle));
+function saveArticles() {
+    localStorage.setItem("storedArticles", JSON.stringify(storedArticles));
+    console.log(storedArticles);
 }
 
 function deleteArticle(){
