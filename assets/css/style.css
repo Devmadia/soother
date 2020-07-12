@@ -26,18 +26,23 @@ body {
     padding: 2rem;
 }
 
+.title {
+    clear: both;
+}
 .soother-title {
     font-family: Roboto;
     color: #03A688;
     text-align: left;
-    display: inline; 
+    display: inline;
+    font-size:vw;
+    padding-bottom: 0rem;
 }
 
 .reader {
     width: 56px;
     height: 56px;
     padding-left: 0.8rem;
-    padding-bottom: 1.3rem;
+    padding-bottom: 1rem;
     display: inline;
 }
 
@@ -45,31 +50,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 23px;
     color: #03A688;
-    text-align: right;
-    padding-top: 2rem;
-    line-height: 1.4;
-}
-
-.soother-title {
-    font-family: Roboto;
-    color: #03A688;
-    text-align: left;
-    display: inline; 
-}
-.reader {
-    width: 56px;
-    height: 56px;
-    padding-left: 0.8rem;
-    padding-bottom: 1.3rem;
+    float: right;
     display: inline;
-}
-.hello {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 23px;
-    color: #03A688;
-    text-align: right;
-    padding-top: 2rem;
-    line-height: 1.4;
+
+    font-size:2vw;
 }
 
 .img-reader {
@@ -121,6 +105,8 @@ border-radius: 21px;
     border-radius: 21px;
     border-color: #03A688;
 }
+
+
 /* .btn {
 
 }
