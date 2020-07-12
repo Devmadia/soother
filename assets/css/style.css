@@ -51,8 +51,7 @@ body {
     font-size: 23px;
     color: #03A688;
     float: right;
-    display: inline;
-
+    padding-top: 2rem;
     font-size:2vw;
 }
 
@@ -84,11 +83,13 @@ border-radius: 21px;
     background: #03A688;
     padding-left: 2rem;
     padding-right: 2rem;
+    
 }
 
 .results {
     border-radius: 21px;
     width: 100%;
+
 }
 
 .read {
