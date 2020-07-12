@@ -26,7 +26,7 @@ $("#searchField").keypress("click", function(e) {
         }
 })
 
-/* gathers news for user search topic and stors searched term in an array for later usage */
+/* gathers news for user search topic and stores searched term in an array for later usage */
 function getNews(searchTerm) {
 
     // fetch news based on searchTerm entered by user through on-click input
@@ -106,7 +106,7 @@ function makeCard(articles, noImgArt) {
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
         var insertImage = $("<p>").attr('id', 'image');
         var insertTitle = $("<p>").attr('id', 'title');
-        var innerBox = $("<div>").addClass("primary-callout callout results");
+        var innerBox = $("<div>").addClass("primary-callout callout results card-size  grid-x grid-margin-x");
         var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
         insertTitle.append(titleLink);
         insertImage.append(image);
