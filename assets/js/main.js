@@ -171,19 +171,22 @@ function getArticle(articles) {
     var savedArticle = $(".title[data-art-id='" + artId + "']");
     console.log(savedArticle);
     var getTitle = savedArticle.html();
+    
     // select matching article link
     console.log(getTitle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
     
-    // create container to append saved articles
+    // create containers to append saved articles
     var saveBox = $("<div>").attr('id', 'saveLink').attr("src", getLink).addClass("callout later-results").attr("data-art-id", artId);
+    //var saveLink = $("<div>").attr("src", getLink).html(getTitle);
 
     // create delete button
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
 
     // append 
-    saveBox.append(getTitle + " ", removeBtn);
+    //saveContainer.append(saveBox);
+    saveBox.append(getTitle + "  ", removeBtn);
     $("#savedArticles").append(saveBox);
     
     // create an object to save to array
