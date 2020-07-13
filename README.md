@@ -28,7 +28,7 @@
 **Resources**
 - API(s):
   - New York Times Article Search API
-  - TBD
+  - Forismatic API
 
 - Graphic Souces:
   - Search by Fahmi from the Noun Project
