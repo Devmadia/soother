@@ -42,6 +42,6 @@
 
 ![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR.png)
 
-![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/soother2.png)
+![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR2.png)
 
-![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/soother3.png)
+![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR3.png)
