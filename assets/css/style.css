@@ -121,6 +121,17 @@ h5 {
     text-align: center;
 }
 
+li {
+    color: #595FD9;
+}
+
+li:hover {
+    color: #F2913D;
+}
+
+a.title:hover {
+    color: #F2913D;
+}
 .outer-results {
     border-radius: 21px;
     background: linear-gradient(98deg, #595FD9 32.37%, #03A688 56.12%);
