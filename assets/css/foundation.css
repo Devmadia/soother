@@ -2420,7 +2420,7 @@ ul.no-bullet, ol.no-bullet {
   margin: 0 0 1rem 0;
   padding: 0.85em 1em;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 8px;
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   font-family: inherit;
@@ -2443,10 +2443,10 @@ ul.no-bullet, ol.no-bullet {
     margin-right: 0;
     margin-left: 0; }
   .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus {
-    background-color: #1779ba;
+    background-color: #03A688;
     color: #fefefe; }
   .button:hover, .button:focus {
-    background-color: #14679e;
+    background-color: #F2913D;
     color: #fefefe; }
   .button.primary, .button.primary.disabled, .button.primary[disabled], .button.primary.disabled:hover, .button.primary[disabled]:hover, .button.primary.disabled:focus, .button.primary[disabled]:focus {
     background-color: #1779ba;
