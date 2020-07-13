@@ -39,7 +39,13 @@ $("#searchField").keypress("click", function(e) {
 
 // when previously searched term is clicked, bring up articles
 function priorArticle() {
-    getNews(event.target.innerText);
+
+    getNews(event.target.innerText)
+    // if (getNews(event.target.innerText)) {
+    //     for (var i = 0; i < searchList.length; i++ {
+            
+    //     })
+    // };
 }
 
 /* gathers news for user search topic and stors searched term in an array for later usage */
@@ -285,7 +291,7 @@ function deleteArticle(){
 function addArticle(news) {
     // introduces a list item element
     var listArticle = $("<li>").addClass("list-group-item list-group-item-action searchedlist").text(news);  //need to define 
-    var clearTerms = $("<button>").html("Clear All").addClass("button remove-btn").attr("id", "clear");
+    // var clearTerms = $("<button>").html("Clear All").addClass("button remove-btn").attr("id", "clear");
     // adds the searched term to the ul with a class of searched-articles
     $("#searched-articles").append(listArticle);
     saveTerms(news);
