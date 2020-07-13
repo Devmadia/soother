@@ -3,7 +3,7 @@ var html = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=j
 
 // Create function for random quote
 var getQuote=function(data){
-  console.log(data);
+//   console.log(data);
   if(data.quoteAuthor === "") {
       data.quoteAuthor = "Unknown";
   }

@@ -1,6 +1,9 @@
 // array for storing searchTerms
 var searchList = []; // array to save article titles that persist on refresh based on user interaction
 
+var articles = [];
+var noImgArt = [];
+
 var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 
 var articleCounter = parseInt(localStorage.getItem("articleCounter")) || 0;
@@ -52,8 +55,8 @@ function getNews(searchTerm) {
                 if (!searchList.includes(response.response.docs)) {
 
                     /* clears arrays before for-loop is utilized */
-                    var articles = [];
-                    var noImgArt = [];
+                    articles.splice(0, articles.length);
+                    noImgArt.splice(0, noImgArt.length);
 
                     for (var i = 0; i < response.response.docs.length; i++) {
                         // console.log(response.response.docs[i].abstract);
@@ -86,20 +89,21 @@ function getNews(searchTerm) {
                     }
 
                     // provides information for the #newsResults & #otherNews elements
-                    makeCard(articles, noImgArt)
+                    makeCard()
                 }
             })
         }
     })
 }
 
-/* "makeCard(articles, noImgArt):" passes (articles, noImgArt) from the getNews 
-articles array to the function below */ 
-function makeCard(articles, noImgArt) {
+/* create UI elements based on global array to the function below */ 
+function makeCard() {
 
     /* clears contents of divs with article data rendered */  
     $("#newsResults").empty();
     $("#otherResults").empty();
+    articleCounter =  0; // resetting the article counter when next search is done
+    console.log(articles);
 
     /* retrieves articles array information */ 
     for (var i = 0; i < articles.length; i++) {
@@ -107,14 +111,14 @@ function makeCard(articles, noImgArt) {
         localStorage.setItem("articleCounter", articleCounter);
                     
         // generates information for first article element
-        var titleOne = articles[i].headline;
+        var titleHeadline = articles[i].headline;
         
         // opens target link in new window to avoid copyright issues
         var titleLink = $("<a>").attr("target", "_blank").attr("data-art-id", articleCounter).addClass("title");
 
         // retrieves titleLinkfrom the variable, thus remains set to [0]
         titleLink[0].href=articles[i].url;
-        titleLink.html(titleOne);
+        titleLink.html(titleHeadline);
         var newsImageOne = articles[i].image;
         var image = $("<img>").attr("src", "https://nytimes.com/" + newsImageOne);
         var insertImage = $("<p>").attr('id', 'image').attr("data-pic-id", picCounter);
@@ -147,14 +151,14 @@ function makeCard(articles, noImgArt) {
         // populates information in an RSS feed style for articles without images
         for (var i = 0; i < noImgArt.length; i++) {
              
-                var titleOne = noImgArt[i].headline;
+                var titleHeadline = noImgArt[i].headline;
 
                 // opens target link in new window
                 var titleLink = $("<a>").attr("target", "_blank");
                 
-                // retrieves titleLinkfrom the variable, thus remains set to [0]
+                // retrieves titleLink from the variable, thus remains set to [0]
                 titleLink[0].href=noImgArt[i].url;
-                titleLink.html(titleOne);
+                titleLink.html(titleHeadline);
                 var insertTitle = $("<p>").attr('id', 'title');
                 var insertAbstract = $("<p>").attr('id', 'abstract');
                 insertTitle.append(titleLink);
@@ -172,37 +176,32 @@ function getArticle() {
     // get matching article link
     var savedArticle = $(".title[data-art-id='" + artId + "']");
     console.log(savedArticle);
+    var getTitle = savedArticle.html();
+    console.log(getTitle);
     var getLink = $(savedArticle).attr('href');
     console.log(getLink);
+    // var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
+
     // create container to append saved articles
-    var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
-    linkT.html(getLink);
-    var linkCont = $("<p>").attr('id', 'titleSaved');
-    linkCont.append(saveBox);
-    linkT.append(saveBox);
-
+    // var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
     
-
+    // var linkCont = $("<p>").attr('id', 'titleSaved');
     // .attr("src", getLink)
 
     // create delete button to remove articles from sidebar
     var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
 
     // append
-    saveBox.append(getTitle + " ", removeBtn);
-    $("#savedArticles").append(saveBox);
-    // set hyperlink to article title
-    // var getFavTitle = $("<a>").attr("href", getLink).text(savedArticle.html());
-    var getTitle = savedArticle.html();
-    console.log(getTitle);
-    
+    // saveBox.append(getTitle + " ", removeBtn);
+    // $("#savedArticles").append(saveBox);
+       
     // // create containers to append saved articles in sidebar
     // var saveBox = $("<div>").attr('id', 'saveLink').addClass("callout later-results").attr("data-art-id", artId);
 
     // // create delete button to remove articles from sidebar
     // var removeBtn = $("<button>").html("Remove").addClass("button remove-btn").attr("data-art-id", artId);
     
-    // // append variables to sidebar
+    // append variables to sidebar
     // saveBox.append(getFavTitle, removeBtn);
     // $("#savedArticles").append(saveBox);
     
