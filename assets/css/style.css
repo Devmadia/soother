@@ -168,16 +168,6 @@ a:hover {
     border-radius: 21px;
     border-color: #03A688;
 }
-/* .btn {
-}
-.btn:hover {
-} */
-
-
-.later-results {
-    border-radius: 21px;
-    border-color: #03A688;
-}
 
 .newspaper {
     position: absolute;
@@ -194,4 +184,8 @@ a:hover {
 
 .callout p {
     color:  #595FD9;
+}
+
+.list-group-itme {
+    cursor:pointer;
 }
