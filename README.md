@@ -12,8 +12,10 @@
     - url available for view on corner of screen as user hovers over title
   - articles retrieved without images displayed in Other Search Results at base of page
   - user input search field automatically clears once an article search is performed
-    - search arrays generated are wiped before next search is rendered
+    - search arrays generated are cleared before next search is rendered
     - UI elements are emptied when user searches for next article topic
+  - random quote generated on header background
+    - 
 
 ### Awaiting Deployment
 - Quote header
