@@ -129,7 +129,7 @@ li:hover {
     color: #F2913D;
 }
 
-a.title:hover {
+a:hover {
     color: #F2913D;
 }
 .outer-results {
@@ -181,5 +181,13 @@ a.title:hover {
 }
 
 .callout {
-    color: #03A688;
+    color: #F28177;
+}
+
+.callout:hover {
+    color: #595FD9;
+}
+
+.callout p {
+    color:  #595FD9;
 }
