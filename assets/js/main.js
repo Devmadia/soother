@@ -278,7 +278,7 @@ function deleteArticle(){
     // use for loop to remove element from array
     for (var i = 0; i < storedArticles.length; i++) {
         console.log(storedArticles[i].id);
-        if (storedArticles[i].id == parseInt(artId)) {
+        if (storedArticles[i].id == artId) {
             storedArticles.splice(i, 1);
             break;
         }
