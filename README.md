@@ -40,8 +40,4 @@
 - Graphic Souces:
   - Search by [Fahmi](https://thenounproject.com/term/search/3205241/) from the Noun Project
 
-![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR.png)
 
-![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR2.png)
-
-![Screenshot of sootheR](https://devmadia.github.io/soother/assets/images/sootheR3.png)
