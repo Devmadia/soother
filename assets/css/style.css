@@ -179,3 +179,7 @@ a.title:hover {
     position: absolute;
     opacity: 0.2;
 }
+
+.callout {
+    color: #03A688;
+}
