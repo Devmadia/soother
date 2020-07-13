@@ -116,10 +116,23 @@ opacity: 0.8;
     padding: 1.2rem;
 } 
 
+h5 {
+    color: #03A688;
+    text-align: center;
+}
+
 .outer-results {
     border-radius: 21px;
     background: linear-gradient(98deg, #595FD9 32.37%, #03A688 56.12%);
     opacity: 0.8;
+}
+
+.callout.later-results.saved {
+    background: linear-gradient(180deg, rgba(3, 166, 136, 0.8) 0%, rgba(89, 95, 217, 0.8) 51.56%, rgba(242, 100, 87, 0.8) 100%);
+}
+
+.saved {
+    background: f2f2f2;
 }
 
 .results {
@@ -144,6 +157,7 @@ opacity: 0.8;
 }
 .btn:hover {
 } */
+
 
 .later-results {
     border-radius: 21px;
