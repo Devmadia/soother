@@ -122,7 +122,7 @@ function makeCard(articles, noImgArt) {
         $(saveBtn).on("click", getArticle);
 
         var innerBox = $("<div>").addClass("primary-callout callout results card-size  grid-x grid-margin-x");
-        var outerBox = $("<div>").addClass("large-4 medium-4 small-4 cell");
+        var outerBox = $("<div>").addClass("large-4 cell");
         insertTitle.append(titleLink);
         insertImage.append(image);
         innerBox.append(insertImage, insertTitle, saveBtn);

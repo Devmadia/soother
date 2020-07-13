@@ -34,7 +34,7 @@ body {
     text-align: left;
     display: inline;
     font-size:vw;
-    padding-bottom: 0rem;
+    padding-bottom: 1rem;
 }
 
 .reader {
@@ -50,7 +50,7 @@ body {
     font-size: 23px;
     color: #03A688;
     float: right;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     font-size:2vw;
 }
 
@@ -62,19 +62,18 @@ body {
 }
 
 .quote-bckg {
-background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
-border-radius: 21px;
+    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
+    border-radius: 21px;
 }
 
 .search-form {
     background-image: url("magnifying_glass.png");
-    /*background-position: 0.625rem 0.625rem;*/
-    background-position: center right;
+    background-position: 0.625rem 0.625rem;
     border-radius: 21px;
     background-repeat: no-repeat;
     background-size: 1rem;
-    /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
-    /* padding: 1.2rem; */
+    padding: 0.75rem 1.25rem 0.75rem 2rem;
+    padding-right: 1.5rem; 
 } 
 
 .outer-results {
