@@ -296,6 +296,12 @@ function addArticle(news) {
     saveTerms(news);
 }
 
+function clearTerms() {
+    searchList.splice(0, searchList.length);
+    // save changes to local storage
+    localStorage.setItem('userInput', JSON.stringify(searchList));
+}
+
 function deleteTerms() {
     // get id of delete button selected
     var termID = $(this).attr("term");
