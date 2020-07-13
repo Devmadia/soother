@@ -39,13 +39,7 @@ $("#searchField").keypress("click", function(e) {
 
 // when previously searched term is clicked, bring up articles
 function priorArticle() {
-
     getNews(event.target.innerText)
-    // if (getNews(event.target.innerText)) {
-    //     for (var i = 0; i < searchList.length; i++ {
-            
-    //     })
-    // };
 }
 
 /* gathers news for user search topic and stors searched term in an array for later usage */
@@ -291,11 +285,42 @@ function deleteArticle(){
 // creating the searched terms' list
 function addArticle(news) {
     // introduces a list item element
-    var listArticle = $("<li>").addClass("list-group-item list-group-item-action searchedlist").text(news);  //need to define 
-    // var clearTerms = $("<button>").html("Clear All").addClass("button remove-btn").attr("id", "clear");
-    // adds the searched term to the ul with a class of searched-articles
-    $("#searched-articles").append(listArticle);
+    var termAnchor = $("<a>").attr("onclick", "priorArticle()").text(news);
+    var listArticle = $("<li>").addClass("searchedlist list-group-item list-group-item-action").attr("term", news);  //need to define 
+    var clearTerms = $("<button>").html("Clear All").addClass("button term-btn").attr("clear-all", "clear");
+    var removeBtn = $("<button>").html("X").addClass("button term-btn").attr("term", news);
+    $(removeBtn).on("click", deleteTerms);
+    // appending
+    listArticle.append(termAnchor, removeBtn);
+    $("#searched-articles").append(listArticle); // adds the searched term to the ul with a class of searched-articles
     saveTerms(news);
+}
+
+function clearTerms() {
+    searchList.splice(0, searchList.length);
+    // save changes to local storage
+    localStorage.setItem('userInput', JSON.stringify(searchList));
+}
+
+function deleteTerms() {
+    // get id of delete button selected
+    var termID = $(this).attr("term");
+    // get matching article and remove from sidebar
+    var termPicked = $(".searchedList[term='" + termID + "']");
+    // termPicked.remove();
+    $("li:has('a'):contains('"+termID+"')").remove();
+
+    // use for loop to remove element from array
+    for (var i = 0; i < searchList.length; i++) {
+        console.log(searchList[i]);
+        if (searchList[i] == termID) {
+            searchList.splice(i, 1);
+            break;
+        }
+    }
+    
+    // save changes to local storage
+    localStorage.setItem('userInput', JSON.stringify(searchList));
 }
 
 // save searched terms to local storage for retrieval
