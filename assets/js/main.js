@@ -223,7 +223,7 @@ function getArticle() {
 
 function createFavCard(article) {
 
-    var getFavTitle = $("<a>").attr("href", article.url).text(article.title);
+    var getFavTitle = $("<a>").attr("target", "_blank").attr("href", article.url).text(article.title);
     // create containers to append saved articles in sidebar
     var saveBox = $("<div>").addClass("callout later-results").attr("data-art-id", article.id);
 
