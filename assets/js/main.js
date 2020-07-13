@@ -216,8 +216,9 @@ function getArticle() {
         title: getTitle,
         url: getLink,
     };
-    // push id to object and array
-    articleDataObj.id = artId;
+    // push id to object and array ((changes made here to test url))
+    // articleDataObj.id = artId;
+    articleDataObj.id = articleDataObj.url;
     console.log(articleDataObj);
     storedArticles.push(articleDataObj);
 
