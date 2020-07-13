@@ -42,24 +42,21 @@
       <div class="grid-x grid-padding-x">
         <div class="large-4 cell">
           <div class="primary-callout">
-            <h5 class="read">Read Me Later</h5>
             <div class="callout later-results">
-              <h5 class="searchterms">Searched Terms</h5>
-                <ul class="list-group" id="searched-articles"></ul>
+              <ul class="list-group" id="searched-articles" onclick="priorArticle()"><h5 class="searchterms">Searched Terms</h5></ul>
+            <h5 class="read">Read Me Later</h5>
+              <div id="savedArticles" class="callout later-results saved"><h5 class="searchterms"></h5></div>
             </div>
-            <div id="savedArticles" class="callout later-results">
-              <h5 class="searchterms">Saved Articles</h5>
             </div>
-          </div>
         </div>
         <!--Content-->
         <div class="large-8 cell">
           <!--Search Bar-->
           <div class="grid-x grid-padding-x">
-
-        <!-- Other Search Results
-            <div class="large-8 cell"></div>
-                newResults are generated here through main.js 
+            </div>
+        <!--Other Search Results-->
+            <div class="large-8 medium-8 cell">
+                <!-- newResults are generated here through main.js
                 <div id="newsResults" class="grid-x grid-padding-x"></div>
                     
                         <div class ="large-12 cell">
@@ -104,10 +101,8 @@
                     </div>
                   </div>
                 </div>
-              </div>
-          </div>
-        </div>
-      </div>
+            </div>
+            </div>
     </div>
 
     <script

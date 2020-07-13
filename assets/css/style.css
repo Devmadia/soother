@@ -1,8 +1,9 @@
 foundation-palette {
     --primary: #F26457;
-    --secondary: #497980;
-    --tertiary:#D9B19A;
+    --secondary: #03A688;
+    --tertiary:#F28177;
     --purple: #595FD9;
+    --orange: #F2913D;
     --white: #f2f2f2;
 }
 
@@ -21,7 +22,7 @@ body {
     font-size: 24px; 
     align-items: center;
     text-align: center;
-    padding: 0rem;
+    padding: 2rem;
 }
 
 .title {
@@ -56,31 +57,76 @@ body {
 .img-reader {
     position: absolute;
     width: 67px;
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
-    border-radius: 21px;	border-radius: 21px;
+    border-radius: 21px;
 }
 
+/* change quote background colors */
+
 .quote-bckg {
-    background: linear-gradient(231.94deg, #F26457 32.37%, #595FD9 56.12%);
-    border-radius: 21px;
+background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
+border-radius: 21px;
+opacity: 0.8;
+}
+
+.start {
+    background: linear-gradient(231.94deg, #F2813D 32.37%, #595FD9 56.12%);
+    opacity: 0.8;
+}
+
+.sky {
+    background: linear-gradient(98deg, #F28177 30%,#F2913D 70%);
+    opacity: 0.8;
+}
+
+.sea {
+    background: linear-gradient(138deg, #03A688 41%, #595FD9 59%);
+    opacity: 0.8;
+}
+
+.peach {
+    background: linear-gradient(98deg,#F2913D 33%,#03A688 70%);
+    opacity: 0.8;
 }
 
 .search-form {
     background-image: url("magnifying_glass.png");
-    background-position: 0.625rem 0.625rem;
+    /*background-position: 0.625rem 0.625rem;*/
+    background-position: center left;
     border-radius: 21px;
     background-repeat: no-repeat;
     background-size: 1rem;
-    padding: 0.75rem 1.25rem 0.75rem 2rem;
-    padding-right: 1.5rem; 
+    /*padding: 0.75rem 1.25rem 0.75rem 2rem;*/
+    padding: 1.2rem;
 } 
 
+h5 {
+    color: #03A688;
+    text-align: center;
+}
+
+li {
+    color: #595FD9;
+}
+
+li:hover {
+    color: #F2913D;
+}
+
+a:hover {
+    color: #F2913D;
+}
 .outer-results {
     border-radius: 21px;
-    background: #03A688;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    
+    background: linear-gradient(98deg, #595FD9 32.37%, #03A688 56.12%);
+    opacity: 0.8;
+}
+
+.callout.later-results.saved {
+    background: linear-gradient(180deg, rgba(3, 166, 136, 0.8) 0%, rgba(89, 95, 217, 0.8) 51.56%, rgba(242, 100, 87, 0.8) 100%);
+}
+
+.saved {
+    background: f2f2f2;
 }
 
 .results {
@@ -134,23 +180,28 @@ body {
     font-size: 20px;
     line-height: 25px;
 }
+.btn:hover {
+} */
 
-.save {
-    margin: none;
-    padding: none;
-    cursor: pointer;
-}
-
-#newsResults {
-    margin: 1px;
-}
 
 .later-results {
     border-radius: 21px;
     border-color: #03A688;
 }
 
-.card-size {
-
+.newspaper {
+    position: absolute;
+    opacity: 0.2;
 }
 
+.callout {
+    color: #F28177;
+}
+
+.callout:hover {
+    color: #595FD9;
+}
+
+.callout p {
+    color:  #595FD9;
+}
