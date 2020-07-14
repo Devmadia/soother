@@ -42,6 +42,6 @@
 
 ![Screenshot of sootheR](https://github.com/Devmadia/soother/blob/master/assets/images/sootheR01.png?raw=true)
 
-![Screenshot of sootheR](https://github.com/Devmadia/soother/blob/master/assets/images/sootheR2.png?raw=true)
+![Screenshot of sootheR](https://github.com/Devmadia/soother/blob/master/assets/images/sootheR02.png?raw=true)
 
-![Screenshot of sootheR](https://github.com/Devmadia/soother/blob/master/assets/images/sootheR3.png?raw=true)
+![Screenshot of sootheR](https://github.com/Devmadia/soother/blob/master/assets/images/sootheR03.png?raw=true)
